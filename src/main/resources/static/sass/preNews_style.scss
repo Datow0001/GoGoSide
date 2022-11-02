@@ -1,0 +1,170 @@
+$primary1: #0A324B;
+$primary2: #F5AF4B;
+$primary3: #D73C28;
+$white: #ffffffe4;
+$black: #000000;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Roboto+Condensed:wght@700&display=swap');
+
+@mixin main-font {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
+  display: inline-block;
+  padding: $pad1 $pad2;
+  background-color: $col1;
+  color: $col2;
+  border-radius: $bRadius;
+  transition: all 0.3s;
+  border: none;
+
+  &:hover {
+    background-color: darken($color: $col1, $amount: 15);
+  }
+}
+
+/* slider section */
+.slider_section {
+  margin: 0 4% 2% 4%;
+  padding: 2% 4%;
+  @include main-font();
+  text-align: justify;
+  justify-content: flex-start;
+  background-color: #0A324B;
+  border-radius: 50px;
+
+  .tit {
+    color: $white;
+    @include main-font();
+    display: flex;
+    text-align: center;
+
+    span {
+      padding: 0px;
+
+      margin-left: 2%;
+      font-size: 1.5rem;
+      display: flex;
+      font-weight: 500;
+      text-align: center;
+      align-items: center;
+      letter-spacing: 2px;
+
+    }
+
+    .filters_menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      list-style-type: none;
+      border: none;
+      padding: 0px;
+      width: 85%;
+
+
+      li {
+        padding: 7px 20px;
+        margin-right: 1%;
+        cursor: pointer;
+        border-radius: 25px;
+        color: $white;
+        font-weight: 350;
+        background-color: $primary2;
+        font-size: 1rem;
+
+        &.active {
+          background-color: $primary2;
+          color: $primary1;
+        }
+
+        &:hover {
+          color: $primary1;
+          text-decoration: none;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+
+  .row {
+    align-items: center;
+    align-items: flex-start;
+    margin-top: 1%;
+    border: #D73C28 solid 3px;
+
+    #customCarousel1 {
+      width: 100%;
+      position: unset;
+    }
+
+    .detail-box {
+      color: $white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      vertical-align: middle;
+      padding: 1.4%;
+
+      h3 {
+        font-size: 2.2rem;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 18px;
+        letter-spacing: 2px;
+
+      }
+
+      .btn1:hover {
+        color: $white;
+        text-decoration: none;
+      }
+
+      a {
+        @include hero_btn($primary2, $primary1, 10px, 45px, 45px);
+      }
+    }
+
+    .slp {
+
+      position: relative;
+      overflow: auto;
+      object-position: center;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+  }
+
+  .carousel-indicators {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 38%;
+
+    li {
+      background-color: $primary2;
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      opacity: 1;
+
+      &.active {
+        width: 20px;
+        height: 20px;
+        background-color: $primary2;
+      }
+    }
+  }
+}
+
+
+// end slider section

@@ -1,0 +1,226 @@
+@font-face {
+	src: url(../../fonts/jf-openhuninn-1.1.ttf);
+	font-family: font1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.content {
+	width: 95%;
+	overflow: auto;
+	margin-left: 3%;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+	height: 25vh;
+	width: 60vw;
+	border: #F5AF4B solid 3px;
+	border-radius: 5%;
+	margin: 1.5% 1% 0 1%;
+	padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+}
+
+.article {
+	width: 65%;
+	float: left;
+}
+
+.asideLeft {
+	width: 12%;
+	float: left;
+	margin-left: 6%;
+	margin-top: 1%;
+	padding-right: 2%;
+	padding-top: 1%;
+}
+
+.asideRight {
+	width: 8%;
+	float: right;
+	margin-top: 1%;
+	padding-right: 6%;
+}
+
+.forumImg {
+	height: 18vh;
+	width: 10vw;
+	text-align: center;
+	vertical-align: bottom;
+	padding-left: 1vw;
+}
+
+.forumIcon{
+	height: 17vh;
+	width: 8vw;
+	overflow: hidden;
+	border: solid 1px white;
+	border-radius: 10%;
+}
+
+.forumTitle {
+	height: 5.5vh;
+	width: 40vw;
+	font-size: 2.5vh;
+	font-weight: 700;
+	color: #0A324B;
+	overflow: hidden;
+}
+
+.forumContent {
+	height: 5vh;
+	width: 47vw;
+	padding-right: 0.5vw;
+	font-weight: 400;
+	font-size: 1.8vh;
+	line-height: 2em;
+	color: gray;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.countsIcon {
+	height: 3vh;
+	width: 0.8vw;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.countsNo{
+	height: 3vh;
+	width: 4vw;
+	font-weight: 400;
+	font-size: 1.2vh;
+	line-height: 1.5em;
+	color: #0A324B;
+	padding-left: 0.2vw;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.space {
+	height: 3vh;
+	width: 24vw;
+}
+
+.postBtn {
+	float: right;
+	display: inline-block;
+	height: 8vh;
+	width: 6vw;
+	margin-top: 2vh;
+	margin-left: 2vw;
+	font-size: 1.2vw;
+	background-color: #F5AF4B;
+	color: rgb(250, 245, 240);
+	border: #F5AF4B 1px solid;
+	border-radius: 10%;
+}
+
+.postBtn a {
+	color: rgb(250, 245, 240);
+}
+
+.postBtn a:link {
+	color: rgb(250, 245, 240);
+	text-decoration: none;
+}
+
+.userIcon {
+	height: 6vh;
+	border: #F5AF4B solid 3px;
+	border-radius: 50%;
+}
+
+.userImg{
+	height: 6vh;
+	width: 4.2vw;
+	padding-left: 0.3vw;
+}
+
+.userName {
+	height: 2.5vh;
+	width: 30vw;
+	font-size: 1.5vh;
+	color: gray;
+	overflow: hidden;
+}
+
+.edit {
+	height: 2.5vh;
+	width: 10vw;
+	font-size: 1.5vh;
+	text-align: right;
+	padding-right: 1vw;
+}
+
+.edit a{
+	color: #D73C28;
+}
+
+.edit a:hover{
+	color: #F5AF4B;
+}
+
+.forumTime {
+	height: 2.5vh;
+	width: 30vw;
+	font-weight: 400;
+	font-size: 1.5vh;
+	color: gray;
+	overflow: hidden;
+}
+
+.eachBtn {
+	height: 6vh;
+	width: 8vw;
+	text-align: center;
+	vertical-align: center;
+	margin-left: 1.5vw;
+	font-size: 2vh;
+	background-color: #0A324B;
+}
+
+#this {
+	height: 10vh;
+	background-color: #F5AF4B;
+	color: rgb(250, 245, 240);
+}
+
+.eachBtn a {
+	color: lightgray;
+}
+
+.eachBtn a:hover {
+	color: #F5AF4B;
+	text-decoration: none;
+}
+
+.pageNo {
+	margin-top: 2vh;
+	text-align: center;
+	font-size: 3vh;
+	color: #0A324B;
+}
+
+#thisPgNo{
+	font-size: 4vh;
+	color: #F5AF4B;
+}
+
+.tablePost{
+	word-wrap: break-all;
+	table-layout: fixed;
+}
+
+td{
+/* 	border: 1px solid red; */
+}

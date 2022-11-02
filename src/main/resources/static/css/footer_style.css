@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Roboto+Condensed:wght@700&display=swap");
+/* footer section*/
+.footer_section {
+  background-color: #0A324B;
+  color: #F5AF4B;
+  text-align: center;
+  margin-top: 25px;
+  padding: 1vh;
+}
+.footer_section .footer_contact {
+  margin-top: 18px;
+}
+.footer_section .footer_contact a {
+  margin: 5px;
+  color: #F5AF4B;
+}
+.footer_section .footer_contact a i {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.footer_section .footer_contact a:hover {
+  color: #ffffff;
+}
+.footer_section .footer-info {
+  text-align: center;
+  margin-top: 8px;
+}/*# sourceMappingURL=footer_style.css.map */

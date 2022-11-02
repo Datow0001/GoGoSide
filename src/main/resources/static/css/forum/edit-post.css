@@ -1,0 +1,124 @@
+@font-face {
+	src: url(../fonts/jf-openhuninn-1.1.ttf);
+	font-family: font1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	height: 100%;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	overflow: auto;
+	width: 98%;
+	min-height: 100%;
+	margin-bottom: -10%;
+	padding: 1% 1% 10% 1%;
+	float: center;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.article {
+	background-color: #0A324B;
+	width: 80%;
+	float: right;
+	padding: 2%;
+	border: #0A324B solid 5px;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.aside {
+	float: left;
+	width: 18%;
+	text-align: center;
+	display: inline-block;
+}
+
+.confirm {
+	width: 96%;
+	float: left;
+	padding: 2% 0 0 20%;
+	display: inline-block;
+}
+
+.userId {
+	font-size: 2vh;
+	color: gray;
+}
+
+.userImg {
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	height: 8vh;
+	border: #F5AF4B solid 3px;
+	border-radius: 50%;
+}
+
+.description {
+	float: left;
+	font-size: 2vh;
+	margin-bottom: 2vh;
+	color: lightgray;
+}
+
+.teamSelect {
+	height: 6vh;
+	width: 12vw;
+	margin-top: 4vh;
+	padding: 2%;
+	border: #F5AF4B 3px solid;
+	border-radius: 10px;
+	font-size: 2vh;
+	line-height: 1.8em;
+	color: #F5AF4B;
+}
+
+.teamOption {
+	color: gray;
+}
+
+#inputTitle {
+	height: 4.5vh;
+	width: 53.5vw;
+	margin-right: 2vw;
+	margin-top: 1vh;
+	padding: 5px;
+	font-size: 1vw;
+	line-height: 2em;
+	color: gray;
+}
+
+#summernote {
+	height: 50vh;
+	width: 53.5vw;
+	margin-right: 2vw;
+	margin-top: 1vh;
+	padding: 5px;
+	font-size: 0.8vw;
+	line-height: 1.5em;
+	color: gray;
+}
+
+.postBtn {
+	height: 5vh;
+	width: 3vw;
+	font-size: 1vw;
+	background-color: #F5AF4B;
+	color: rgb(250, 245, 240);
+	border: #F5AF4B 3px solid;
+	border-radius: 10%;
+	cursor: pointer;
+}
+
+.imgPast{
+	width: 10vw;	
+}

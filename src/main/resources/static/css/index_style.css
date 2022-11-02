@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Roboto+Condensed:wght@700&display=swap");
+/* slider section */
+.slider_section {
+  padding: 0%;
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: justify;
+  justify-content: flex-start;
+}
+.slider_section .filters_menu {
+  border-top: #0A324B solid 1px;
+  border-bottom: #0A324B solid 1px;
+  margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin-bottom: 1%;
+  justify-content: space-around;
+}
+.slider_section .filters_menu li {
+  padding: 7px 25px;
+  cursor: pointer;
+  border-radius: 25px;
+  color: #0A324B;
+}
+.slider_section .filters_menu li.active {
+  background-color: #0A324B;
+  color: rgba(255, 255, 255, 0.8941176471);
+}
+.slider_section .filters_menu li:hover {
+  color: #F5AF4B;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.slider_section .row {
+  align-items: center;
+  align-items: flex-start;
+  min-height: 50vh;
+  max-height: 50vh;
+  margin-top: 1%;
+}
+.slider_section .row #customCarousel1 {
+  width: 100%;
+  position: unset;
+}
+.slider_section .row .detail-box {
+  color: #0A324B;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  vertical-align: middle;
+  padding: 1.4%;
+}
+.slider_section .row .detail-box h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.slider_section .row .detail-box p {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.slider_section .row .detail-box .btn1:hover {
+  color: rgba(255, 255, 255, 0.8941176471);
+  text-decoration: none;
+}
+.slider_section .row .detail-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #F5AF4B;
+  color: #0A324B;
+  border-radius: 45px;
+  transition: all 0.3s;
+  border: none;
+}
+.slider_section .row .detail-box a:hover {
+  background-color: #e78d0d;
+}
+.slider_section .row .slp {
+  position: relative;
+  overflow: auto;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.slider_section .carousel-indicators {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+.slider_section .carousel-indicators li {
+  background-color: #F5AF4B;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  opacity: 1;
+}
+.slider_section .carousel-indicators li.active {
+  width: 20px;
+  height: 20px;
+  background-color: #F5AF4B;
+}/*# sourceMappingURL=index_style.css.map */

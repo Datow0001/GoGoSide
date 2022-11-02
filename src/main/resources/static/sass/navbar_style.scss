@@ -1,0 +1,284 @@
+$primary1: #0A324B;
+$primary2: #F5AF4B;
+$primary3: #D73C28;
+$white: #ffffffe4;
+$black: #000000;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Roboto+Condensed:wght@700&display=swap');
+
+
+@mixin try {
+  border: #D73C28 solid 2px;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-collapse: collapses;
+}
+
+@mixin main-font {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
+  display: inline-block;
+  padding: $pad1 $pad2;
+  background-color: $col1;
+  color: $col2;
+  border-radius: $bRadius;
+  transition: all 0.3s;
+  border: none;
+
+  &:hover {
+    background-color: darken($color: $col1, $amount: 15);
+  }
+}
+
+
+.search_border {
+  border: $primary1 solid 1px;
+  border-radius: 15px;
+  height: 30px;
+  margin-left: 3px;
+}
+
+input:focus {
+  border: $primary2;
+  color: $primary2;
+  font-weight: 400;
+
+
+}
+
+.search_font {
+  @include main-font();
+  letter-spacing: 4px;
+  font-size: small;
+  padding: 0px;
+  padding-left: 15px;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.heading_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2 {
+    position: relative;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    span {
+      color: $primary1;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  &.heading_center {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $primary2;
+}
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+
+.heading_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2 {
+    position: relative;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    span {
+      color: $primary1;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  &.heading_center {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/*header section*/
+
+// header邊界
+.header_section {
+  padding: 15px 25px;
+}
+
+
+
+// logo
+.navbar-brand {
+  @include main-font();
+  padding: 0vh 1.5vw;
+  display: flex;
+  justify-content: baseline;
+
+  svg {
+    width: 30px;
+    fill: $primary2;
+  }
+
+
+  span {
+    padding-left: 1vw;
+    font-weight: bold;
+    font-size: 3vh;
+    color: $primary2;
+  }
+}
+
+
+
+
+.custom_nav-container {
+  padding: 0vh 10vw;
+
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .nav-item {
+
+      .nav-link {
+        padding: 5px 20px;
+        color: $primary1;
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+
+      &:hover,
+      &.active {
+        .nav-link {
+          color: $primary2;
+
+        }
+      }
+    }
+  }
+}
+
+.custom_nav-container .nav_search-btn {
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: none;
+  color: $primary1;
+  margin: 0 10px;
+
+  &:hover {
+    color: $primary2;
+  }
+}
+
+.user_option {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin: 0 10px;
+  }
+
+  .user_link {
+    color: $primary1;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $primary2;
+
+    }
+  }
+
+
+  .order_online {
+    @include hero_btn($primary2, $primary1, 8px, 10px, 15px);
+  }
+}
+
+.custom_nav-container .navbar-toggler {
+  padding: 0;
+  width: 37px;
+  height: 42px;
+  transition: all 0.3s;
+  outline: none;
+
+  span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: $white;
+    margin: 7px 0;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 5px;
+    transition: all 0.3s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $white;
+      top: -10px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    transform: rotate(360deg);
+
+    span {
+      transform: rotate(45deg);
+
+      &::before,
+      &::after {
+        transform: rotate(90deg);
+        top: 0;
+      }
+    }
+
+  }
+}
