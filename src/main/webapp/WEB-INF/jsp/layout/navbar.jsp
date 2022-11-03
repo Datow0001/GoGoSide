@@ -137,8 +137,8 @@
 						data-toggle="dropdown" aria-expanded="false">球隊</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${contextRoot}/Team/Standing">戰績</a> <a
-								class="dropdown-item disabled">Disabled link</a> <a
-								class="dropdown-item" href="#">Another link</a>
+								class="dropdown-item disabled"></a> <a
+								class="dropdown-item" href="${contextRoot}/fielderstat">球員數據</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="" role="button"
@@ -204,8 +204,8 @@
 </body>
 
 <!-- jQery -->
-<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script>
+<script src="${contextRoot}/js/jquery-3.6.1.min.js" type="text/javascript"></script>
 <!-- bootstrap js -->
-<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script>
+<script src="${contextRoot}/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 
 </html>

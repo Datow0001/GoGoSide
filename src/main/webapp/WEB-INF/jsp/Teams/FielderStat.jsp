@@ -17,7 +17,8 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 
-
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 <link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png"
 	type="">
 <title>Standing</title>
@@ -34,17 +35,15 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
 	integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
 	crossorigin="anonymous" />
-<!-- font awesome style -->
-<link href="${contextRoot}/css/font-awesome.min.css" rel="stylesheet" />
+
+
 
 <!-- Custom styles for this template -->
 <link href="${contextRoot}/css/index_style.css" rel="stylesheet" />
 <!-- responsive style -->
 <link href="${contextRoot}/css/responsive.css" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/104e2ed605.js"
-	crossorigin="anonymous"></script>
-<style>
 
+<style>
 </style>
 
 </head>
@@ -56,60 +55,53 @@
 
 	<!-- navbar -->
 	<jsp:include page="../layout/navbar.jsp"></jsp:include>
-	<div>
-		<c:forEach items="${list}" var="teamlist">
-			<table class="table" style="width: 1000px">
-				<thead>
-					<tr>
-						<th scope="col">排名</th>
-						<th scope="col">隊伍名稱</th>
-						<th scope="col">勝場</th>
-						<th scope="col">敗場</th>
-						<th scope="col">勝率</th>
-						<th scope="col">勝差</th>
-						<th scope="col">外卡勝差</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="team" items="${teamlist}" varStatus="s">
-						<tr>
-							<th scope="row">${s.count}</th>
-							<td><img  src="${contextRoot}/showTeamImage/${team.teamId}" height="20px" width="20px">${team.name}</td>
-							<td>${team.win}</td>
-							<td>${team.lose}</td>
-							<td>${team.percent}</td>
-							<td>${team.diff}</td>
-							<td>${team.wcb}</td>
-						</tr>
-					</c:forEach>
 
 
-				</tbody>
-			</table>
-			<br>
-		</c:forEach>
+	<div class="container">
+		<table id="table_id" class="display">
+			<thead>
 
+			</thead>
+			<tbody>
 
-
-
-
-
-
-
-
+			</tbody>
+		</table>
 
 	</div>
-	<a href="${contextRoot}/Team/getTeam">getStanding</a>
-	<a href="${contextRoot}/Team/updateStanding">updateStanding</a>
-	<a href="${contextRoot}/Team/getImg">getImg</a>
 
-	<a href="${contextRoot}/Player/GetFielder">GetFielderStat</a>
+
+
+
+	<script type="text/javascript" charset="utf8"
+		src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+	<script type="text/javascript">
+$(document).ready( function () {
+    $('#table_id').DataTable({
+    	"ajax":'http://localhost:8080/my-app/FielderStat1',
+    	"columns":[
+    		{data:'fielderName',title:'球員名稱',},
+    		{data:'fielderPos',title:'守備位置',},
+    		{data:'team',title:'球隊',},
+    		{data:'gamePlayed',title:'總場數',},
+    		{data:'ab',title:'打數',},
+    		{data:'hit',title:'安打',},
+    		{data:'sbh',title:'二壘安打',},
+    		{data:'tbh',title:'三壘安打',},
+    		{data:'hr',title:'全壘打',},
+    		{data:'rbi',title:'打點',},
+    		{data:'bb',title:'保送',},
+    		{data:'so',title:'三振',},
+    		{data:'sb',title:'盜壘',},
+    		{data:'cs',title:'盜壘刺',},
+    		{data:'avg',title:'打擊率',},
+    		{data:'obp',title:'上壘率',},
+    		{data:'slg',title:'長打率',},
+    		{data:'ops',title:'攻擊指數',},
+    	]
+    });
+} );
+
+</script>
+
 </body>
-
-
-<!-- jQery -->
-<%-- <script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
-<!-- bootstrap js -->
-<%-- <script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
-
 </html>
