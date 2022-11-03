@@ -104,6 +104,7 @@
 	<a href="${contextRoot}/Team/getImg">getImg</a>
 
 	<a href="${contextRoot}/Player/GetFielder">GetFielderStat</a>
+	<a href="${contextRoot}/Player/GetPitcher">GetPitcherStat</a>
 </body>
 
 

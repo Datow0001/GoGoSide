@@ -23,7 +23,7 @@ public class FielderServiceImpl implements FielderService {
 	public void getStat() {
 		System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		for (int i = 1; i <= 1; i++) {
+		for (int i = 1; i <= 32; i++) {
 			driver.get("https://www.mlb.com/stats/games/regular-season?page=" + i + "&playerPool=ALL");
 			try {
 				Thread.sleep(5000);

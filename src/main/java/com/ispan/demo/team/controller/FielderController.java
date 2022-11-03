@@ -35,10 +35,6 @@ public class FielderController {
 	public Map<String, List<Fielder>> FielderStat(Model model) {
 		HashMap<String, List<Fielder>> map = new HashMap<>();
 		List<com.ispan.demo.team.model.Fielder> res = fs.findAll();
-		for (Fielder fielder : res) {
-			System.out.println(fielder.getFielderName());
-			
-		}
 		map.put("data", res);
 		return map;
 	}
