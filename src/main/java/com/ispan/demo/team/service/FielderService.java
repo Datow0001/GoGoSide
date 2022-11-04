@@ -10,4 +10,6 @@ public interface FielderService {
 	
 	List<Fielder> findAll();
 	
+	List<Fielder> findByTeam(String team);
+	
 }

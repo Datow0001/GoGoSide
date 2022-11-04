@@ -10,4 +10,6 @@ public interface PitcherService {
 	
 	List<Pitcher> findAll();
 	
+	List<Pitcher> findByTeam(String team);
+	
 }

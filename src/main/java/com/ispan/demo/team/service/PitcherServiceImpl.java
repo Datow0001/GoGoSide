@@ -23,9 +23,13 @@ public class PitcherServiceImpl implements PitcherService {
 	
 	@Override
 	public void getStat() {
+		pDao.deleteAll();
 		System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		for (int i = 1; i <= 2; i++) {
+		driver.get("https://www.mlb.com/stats/pitching/regular-season?page=1&playerPool=ALL&sortState=asc");
+		List<WebElement> but = driver.findElements(By.className("tab-27nhZTIl"));
+		int size=Integer.parseInt(but.get(but.size()-1).getText());
+		for (int i = 1; i <= size; i++) {
 			driver.get("https://www.mlb.com/stats/pitching/regular-season?page="+i+"&playerPool=ALL&sortState=asc");
 			try {
 				Thread.sleep(5000);
@@ -124,6 +128,11 @@ public class PitcherServiceImpl implements PitcherService {
 	public List<Pitcher> findAll() {
 		
 		return pDao.findAll();
+	}
+
+	@Override
+	public List<Pitcher> findByTeam(String team) {
+		return pDao.findAllByTeam(team);
 	}
 
 }

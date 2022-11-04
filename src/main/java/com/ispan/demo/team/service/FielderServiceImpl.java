@@ -21,9 +21,13 @@ public class FielderServiceImpl implements FielderService {
 	private FielderDao fDao;
 
 	public void getStat() {
+		fDao.deleteAll();
 		System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		for (int i = 1; i <= 32; i++) {
+		driver.get("https://www.mlb.com/stats/regular-season?playerPool=ALL");
+		List<WebElement> but = driver.findElements(By.className("tab-27nhZTIl"));
+		int size=Integer.parseInt(but.get(but.size()-1).getText());
+		for (int i = 1; i <= size; i++) {
 			driver.get("https://www.mlb.com/stats/games/regular-season?page=" + i + "&playerPool=ALL");
 			try {
 				Thread.sleep(5000);
@@ -111,5 +115,10 @@ public class FielderServiceImpl implements FielderService {
 	@Override
 	public List<Fielder> findAll() {
 		return fDao.findAll();
+	}
+
+	@Override
+	public List<Fielder> findByTeam(String team) {
+		return fDao.findByTeam(team);
 	}
 }
