@@ -51,6 +51,16 @@ public class News {
 
 	@Column(name = "shortIndex")
 	private String shortIndex;
+	
+	private String sportType;
+
+	public String getSportType() {
+		return sportType;
+	}
+
+	public void setSportType(String sportType) {
+		this.sportType = sportType;
+	}
 
 	public String getShortIndex() {
 		return shortIndex;

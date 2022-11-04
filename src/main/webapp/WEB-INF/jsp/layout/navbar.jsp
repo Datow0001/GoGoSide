@@ -146,8 +146,10 @@
 						data-toggle="dropdown" aria-expanded="false">新聞</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${contextRoot}/News/newsPage">新聞列表</a>
-							<a class="dropdown-item disabled">Disabled link</a> <a
-								class="dropdown-item" href="#">Another link</a>
+<!-- 							<a class="dropdown-item disabled">Disabled link</a>  -->
+							
+							<a class="dropdown-item" href="${contextRoot}/News/searchMLB">MLB</a>
+							<a class="dropdown-item" href="${contextRoot}/News/searchNBA">NBA</a>
 						</div></li>
 
 					<li class="nav-item dropdown"><a

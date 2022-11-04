@@ -18,4 +18,9 @@ public interface NewsDao extends JpaRepository<News, Integer> {
 //	@Query(value ="select * from newstable where newsIndex like CONCAT('%',?1,'%') ORDER BY ?#{#pageable}",countQuery = "select count(*) from newstable where newsIndex like CONCAT('%',?1,'%')",nativeQuery = true)
 	@Query(value ="select * from newstable where newsIndex like CONCAT('%',?1,'%') ORDER BY ?#{#pageable}",nativeQuery = true)
 	Page<News> search(String word, Pageable pageable);
+	
+//	@Query(value ="select * from newstable where sportType like CONCAT('%',?1,'%') ORDER BY ?#{#pageable}",nativeQuery = true)
+//	Page<News> findNBAnews(String word,Pageable pageable);
+	
+	List<News> findBySportType(String type);
 }

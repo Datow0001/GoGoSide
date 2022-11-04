@@ -29,19 +29,19 @@ public class NewsController {
 
 	@GetMapping("/getNews")
 	public String getNews() {
-		List<News> list = nService.findAllNews();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-		Date date = new Date();
-		String sDate = sdf.format(date);
+//		List<News> list = nService.findAllNews();
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+//		Date date = new Date();
+//		String sDate = sdf.format(date);
 //		String sDate = "2022/10/13";
 //		Boolean b = true;
-		for (News news : list) {
-			if (sdf.format(news.getNewsDate()).equals(sDate)) {
+//		for (News news : list) {
+//			if (sdf.format(news.getNewsDate()).equals(sDate)) {
 ////				nService.deleteNews(news.getNewsNumber());
 ////				nmService.deleteByNewsNumber(news.getNewsNumber());
 //				b = false;
-			}
-		}
+//			}
+//		}
 //		if (b == true) {
 //			nService.getNews();
 //		} else {
@@ -49,8 +49,13 @@ public class NewsController {
 //		}
 		nService.getNews();
 		return "index";
-
 	}
+	@GetMapping("/getNBAnews")
+	public String getNBAnews() {
+		nService.getNBANews();
+		return"index";
+	}
+	
 	@GetMapping("/News/search")
 	public String searchNews(@RequestParam(name="word")String word,Model model) {
 		Page<News> page=nService.findBySearch(word);	
@@ -59,6 +64,28 @@ public class NewsController {
 		List<News> top = nService.findTopClick();
 		model.addAttribute("top",top);
 
+		return "News/ViewSearchNews"; 
+	}
+	
+	
+	@GetMapping("/News/searchNBA")
+	public String searchNBANews(@RequestParam(name = "p", defaultValue = "1") Integer pageNumber,Model model) {
+		Page<News> page=nService.findBySport("NBA",pageNumber);	
+		model.addAttribute("page",page);
+		
+		List<News> top = nService.findTopClick();
+		model.addAttribute("top",top);
+		model.addAttribute("type","NBA");
+		return "News/ViewSearchNews"; 
+	}
+	@GetMapping("/News/searchMLB")
+	public String searchMLBNews(@RequestParam(name = "p", defaultValue = "1") Integer pageNumber,Model model) {
+		Page<News> page=nService.findBySport("MLB",pageNumber);	
+		model.addAttribute("page",page);
+		
+		List<News> top = nService.findTopClick();
+		model.addAttribute("top",top);
+		model.addAttribute("type","MLB");
 		return "News/ViewSearchNews"; 
 	}
 

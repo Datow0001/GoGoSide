@@ -52,14 +52,15 @@
 
 			</c:forEach>
 			<div>
-<%-- 			<c:forEach var="num" begin="1" end="${page.totalPages}"> --%>
-<%-- 				<c:choose> --%>
-<%-- 					<c:when test="${page.number+1 != num}"> --%>
-<%-- 						<a href="${contextRoot}/News/?p=${num}">${num}</a> --%>
-<%-- 					</c:when> --%>
-<%-- 					<c:otherwise>${num}</c:otherwise> --%>
-<%-- 				</c:choose> --%>
-<%-- 			</c:forEach> --%>
+			<c:forEach var="num" begin="1" end="${page.totalPages}">
+				<c:choose>
+					<c:when test="${page.number+1 != num}">
+						<a href="${contextRoot}/News/search${type}?p=${num}">${num}</a>
+					</c:when>
+					<c:otherwise>${num}</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			
 			<a href="${contextRoot}/getNews">getTodayNews</a>
 			<form action="${contextRoot}/News/search" method="get">
 			<textarea name="word" class="form-control" ></textarea>

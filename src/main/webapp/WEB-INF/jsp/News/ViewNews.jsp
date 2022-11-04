@@ -88,7 +88,9 @@
 				<%-- 				</c:forEach> --%>
 
 				<a href="${contextRoot}/getNews">getTodayNews</a>
+				<a href="${contextRoot}/getNBAnews">getTodayNewsNBA</a>
 				<a href="${contextRoot}/getHighLight">gethighLight</a>
+				<a href="${contextRoot}/News/searchNBA">seeNBA</a>
 				
 				<form action="${contextRoot}/News/search" method="get">
 					<textarea name="word" class="form-control"></textarea>
