@@ -109,6 +109,7 @@
 
 	<a href="${contextRoot}/Team/getNBAteam">GetNBAStat</a>
 	<a href="${contextRoot}/Team/updateNBAteam">updateNBAStat</a>
+	<a href="${contextRoot}/NBAPlayer/get">updateNBAPlayerStat</a>
 </body>
 
 
