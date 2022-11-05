@@ -138,8 +138,9 @@
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${contextRoot}/Team/teamInfo">球隊資訊</a>
 							<a class="dropdown-item" href="${contextRoot}/Team/Standing">戰績</a>
+							<a class="dropdown-item" href="${contextRoot}/Team/NBAstand">NBA戰績</a>
 							<a class="dropdown-item" href="${contextRoot}/Pitcherstat">投手數據</a>
-							<a class="dropdown-item" href="${contextRoot}/fielderstat">球員數據</a>
+							<a class="dropdown-item" href="${contextRoot}/fielderstat">野手數據</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="" role="button"

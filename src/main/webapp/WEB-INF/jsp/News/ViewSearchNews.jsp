@@ -52,16 +52,35 @@
 
 			</c:forEach>
 			<div>
-			<c:forEach var="num" begin="1" end="${page.totalPages}">
-				<c:choose>
-					<c:when test="${page.number+1 != num}">
-						<a href="${contextRoot}/News/search${type}?p=${num}">${num}</a>
-					</c:when>
-					<c:otherwise>${num}</c:otherwise>
-				</c:choose>
-			</c:forEach>
-			
-			<a href="${contextRoot}/getNews">getTodayNews</a>
+<%-- 			<c:forEach var="num" begin="1" end="${page.totalPages}"> --%>
+<%-- 				<c:choose> --%>
+<%-- 					<c:when test="${page.number+1 != num}"> --%>
+<%-- 						<a href="${contextRoot}/News/search${type}?p=${num}">${num}</a> --%>
+<%-- 					</c:when> --%>
+<%-- 					<c:otherwise>${num}</c:otherwise> --%>
+<%-- 				</c:choose> --%>
+<%-- 			</c:forEach> --%>
+<!-- 		-------------------------	 -->
+<div class="btn-toolbar" role="toolbar"
+					aria-label="Toolbar with button groups">
+					<div class="btn-group me-2" role="group" aria-label="First group">
+						<c:forEach var="num" begin="1" end="${page.totalPages}">
+							<c:choose>
+								<c:when test="${page.number+1 != num}">
+									<a href="${contextRoot}/News/search${type}?p=${num}"><button
+											type="button" class="btn btn-primary">${num}</button></a>
+								</c:when>
+								<c:otherwise>
+									<button type="button" class="btn btn-info">${num}</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+
+
+					</div>
+
+				</div>
+<!-- 		----------------- -->
 			<form action="${contextRoot}/News/search" method="get">
 			<textarea name="word" class="form-control" ></textarea>
 			<input type="submit" name="submit" value="送出">

@@ -48,9 +48,9 @@ public class NewsServiceImpl implements NewsService{
 		WebDriver driver2 = new ChromeDriver();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		Date date1 = new Date();
-		String date = sdf.format(date1);
+//		String date = sdf.format(date1);
 
-//		String date = "2022/10/30";
+		String date = "2022/11/04";
 		WebElement title;
 //         從力台新聞網爬取
 		driver.get("https://www.ltsports.com.tw/category/baseball/mlb/");
@@ -205,9 +205,9 @@ public class NewsServiceImpl implements NewsService{
 		WebDriver driver2 = new ChromeDriver();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		Date date1 = new Date();
-		String date = sdf.format(date1);
+//		String date = sdf.format(date1);
 
-//		String date = "2022/10/30";
+		String date = "2022/11/04";
 		WebElement title;
 //         從力台新聞網爬取
 		driver.get("https://www.ltsports.com.tw/category/basketball/nba/");

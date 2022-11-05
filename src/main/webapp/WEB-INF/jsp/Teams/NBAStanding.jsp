@@ -57,7 +57,11 @@
 	<!-- navbar -->
 	<jsp:include page="../layout/navbar.jsp"></jsp:include>
 	<div>
-		<c:forEach items="${list}" var="teamlist">
+		<c:forEach items="${list}" var="teamlist" varStatus="c">	
+		<c:choose>
+			<c:when test="${c.count==1}"><h3>東區</h3></c:when>
+			<c:when test="${c.count==2}"><h3>西區</h3></c:when>
+		</c:choose>		  
 			<table class="table" style="width: 1000px">
 				<thead>
 					<tr>
@@ -67,19 +71,32 @@
 						<th scope="col">敗場</th>
 						<th scope="col">勝率</th>
 						<th scope="col">勝差</th>
-						<th scope="col">外卡勝差</th>
+						<th scope="col">每場得分</th>
+						<th scope="col">每場失分</th>
+						<th scope="col">得失分差</th>
+						<th scope="col">主場</th>
+						<th scope="col">客場</th>
+						<th scope="col">近況</th>
+						<th scope="col">近十場</th>						
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="team" items="${teamlist}" varStatus="s">
 						<tr>
 							<th scope="row">${s.count}</th>
-							<td><img  src="${contextRoot}/showTeamImage/${team.teamId}" height="20px" width="20px">${team.name}</td>
+<%-- 						<td><img  src="${contextRoot}/showNBATeamImage/${team.teamId}" height="20px" width="20px">${team.teamName}</td> --%>
+						<td><img  src="${team.teamImageSrc}" height="20px" width="20px">${team.teamName}</td>
 							<td>${team.win}</td>
 							<td>${team.lose}</td>
 							<td>${team.percent}</td>
+							<td>${team.gb}</td>
+							<td>${team.ppg}</td>
+							<td>${team.oppg}</td>
 							<td>${team.diff}</td>
-							<td>${team.wcb}</td>
+							<td>${team.home}</td>
+							<td>${team.road}</td>
+							<td>${team.strk}</td>
+							<td>${team.lastTen}</td>
 						</tr>
 					</c:forEach>
 
@@ -99,16 +116,15 @@
 
 
 	</div>
-	<a href="${contextRoot}/Team/getTeam">getStanding</a>
-	<a href="${contextRoot}/Team/updateStanding">updateStanding</a>
-	<a href="${contextRoot}/Team/getImg">getImg</a>
+<%-- 	<a href="${contextRoot}/Team/getTeam">getStanding</a> --%>
+<%-- 	<a href="${contextRoot}/Team/updateStanding">updateStanding</a> --%>
+<%-- 	<a href="${contextRoot}/Team/getImg">getImg</a> --%>
 
-	<a href="${contextRoot}/Player/GetFielder">GetFielderStat</a>
-	<a href="${contextRoot}/Player/GetPitcher">GetPitcherStat</a>
+<%-- 	<a href="${contextRoot}/Player/GetFielder">GetFielderStat</a> --%>
+<%-- 	<a href="${contextRoot}/Player/GetPitcher">GetPitcherStat</a> --%>
 
 
-	<a href="${contextRoot}/Team/getNBAteam">GetNBAStat</a>
-	<a href="${contextRoot}/Team/updateNBAteam">updateNBAStat</a>
+<%-- 	<a href="${contextRoot}/Team/getNBAteam">GetNBAStat</a> --%>
 </body>
 
 
