@@ -18,7 +18,10 @@ public class PageController {
 		
 		return "index";
 	}
-	
+	@GetMapping("/Back")
+	public String backStage() {
+		return"layout/BackStage";
+	}
 
 	
 	
