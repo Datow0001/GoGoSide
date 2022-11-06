@@ -239,4 +239,9 @@ public class NBATeamServiceImpl implements NBATeamService {
 
 	}
 
+	@Override
+	public NBATeam findByName(String name) {		
+		return nDao.findByTeamName(name);
+	}
+
 }

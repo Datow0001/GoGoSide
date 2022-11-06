@@ -8,4 +8,6 @@ public interface NBATeamDao extends JpaRepository<NBATeam, Integer> {
 
 	List<NBATeam> findByTeamDiv(String string);
 	
+	NBATeam findByTeamName(String name);
+	
 }

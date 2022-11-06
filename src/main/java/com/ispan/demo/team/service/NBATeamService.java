@@ -13,4 +13,6 @@ public interface NBATeamService {
 	List<NBATeam> findByDiv(String string);
 
 	NBATeam findById(Integer id);
+	
+	NBATeam findByName(String name);
 }

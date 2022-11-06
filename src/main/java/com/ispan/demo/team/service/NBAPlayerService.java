@@ -7,4 +7,5 @@ import com.ispan.demo.team.model.NBAPlayer;
 public interface NBAPlayerService {
  void getStat();
  List<NBAPlayer> findAll();
+ List<NBAPlayer> findByTeamName(String name);
 }

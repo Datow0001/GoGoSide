@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import com.ispan.demo.team.model.NBAPlayer;
 import com.ispan.demo.team.model.NBAPlayerDao;
-import com.ispan.demo.team.model.NBATeam;
 
 @Transactional
 @Service
@@ -218,6 +217,12 @@ public class NBAPlayerServiceImpl implements NBAPlayerService {
 	@Override
 	public List<NBAPlayer> findAll() {
 		return pDao.findAll();
+	}
+
+	@Override
+	public List<NBAPlayer> findByTeamName(String name) {
+		
+		return pDao.findByTeam(name);
 	}
 
 }

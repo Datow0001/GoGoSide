@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +12,18 @@
 <jsp:include page="../layout/navbar.jsp"></jsp:include>
 
 
-	<a href="${contextRoot}/Team/getTeam">getStanding--╗З╠oMLB╡y╤╓╬таZ</a>  <br> 
-	<a href="${contextRoot}/Team/updateStanding">updateStanding--╖С╥sMLB╡y╤╓╬таZ</a> <br> 
-	<a href="${contextRoot}/Team/getImg">getImg--╠qюR╨A╦Й╥╫╗З╠oMLB╤╓ю╡</a> <br> 
-	<a href="${contextRoot}/Player/GetFielder">GetFielderStat--╗З╠oMLBЁ╔╓Б╪ф╬з</a> <br> 
-	<a href="${contextRoot}/Player/GetPitcher">GetPitcherStat--╗З╠oMLB╖К╓Б╪ф╬з</a> <br> 
-	<a href="${contextRoot}/Team/getNBAteam">GetNBAStat--╗З╠oNBA╡y╤╓╬таZ</a> <br> 
-	<a href="${contextRoot}/Team/updateNBAteam">updateNBAStat--╖С╥sNBA╡y╤╓╬таZ</a> <br> 
-	<a href="${contextRoot}/NBAPlayer/get">updateNBAPlayerStat--╗З╠oNBA╡y╜Ш╪ф╬з</a> <br> 
+	<a href="${contextRoot}/Team/getTeam">getStanding--Е▐√Е╬≈MLBГ░┐И ┼Ф┬╟Г╦╬</a>  <br> 
+	<a href="${contextRoot}/Team/updateStanding">updateStanding--Ф⌡╢Ф√╟MLBГ░┐И ┼Ф┬╟Г╦╬</a> <br> 
+	<a href="${contextRoot}/Team/getImg">getImg--Е╬·И²°Ф┘▀ХЁ┤Ф╨░Е▐√Е╬≈MLBИ ┼Е╬╫</a> <br> 
+	<a href="${contextRoot}/Player/GetFielder">GetFielderStat--Е▐√Е╬≈MLBИ┤▌Ф┴▀Ф∙╦Ф⌠ </a> <br> 
+	<a href="${contextRoot}/Player/GetPitcher">GetPitcherStat--Е▐√Е╬≈MLBФ┼∙Ф┴▀Ф∙╦Ф⌠ </a> <br> 
+	<a href="${contextRoot}/Team/getNBAteam">GetNBAStat--Е▐√Е╬≈NBAГ░┐И ┼Ф┬╟Г╦╬</a> <br> 
+	<a href="${contextRoot}/Team/updateNBAteam">updateNBAStat--Ф⌡╢Ф√╟NBAГ░┐И ┼Ф┬╟Г╦╬</a> <br> 
+	<a href="${contextRoot}/NBAPlayer/get">updateNBAPlayerStat--Е▐√Е╬≈NBAГ░┐Е⌠║Ф∙╦Ф⌠ </a> <br> 
 	------------------------------------------------------------------------------- <br> 
-	<a href="${contextRoot}/getNews">getTodayNews--╗З╠o╓╣╓я╙╨MLB╥s╩D</a> <br> 
-	<a href="${contextRoot}/getNBAnews">getTodayNewsNBA--╗З╠o╓╣╓я╙╨NBA╥s╩D</a> <br> 
-	<a href="${contextRoot}/getHighLight">gethighLight--╗З╠oHIGHTLIGHT</a> <br> 
-	<a href="${contextRoot}/News/searchNBA">seeNBA--NBA╥s╩D╦╜╜╠</a> <br> 
+	<a href="${contextRoot}/getNews">getTodayNews--Е▐√Е╬≈Д╩┼Е╓╘Г └MLBФ√╟Х│·</a> <br> 
+	<a href="${contextRoot}/getNBAnews">getTodayNewsNBA--Е▐√Е╬≈Д╩┼Е╓╘Г └NBAФ√╟Х│·</a> <br> 
+	<a href="${contextRoot}/getHighLight">gethighLight--Е▐√Е╬≈HIGHTLIGHT</a> <br> 
+	<a href="${contextRoot}/News/searchNBA">seeNBA--NBAФ√╟Х│·Х▒┴И²╒</a> <br> 
 </body>
 </html>
