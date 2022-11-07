@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -10,63 +12,129 @@
 <title>Team</title>
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+<style>
+.nameAndStanding {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.standing {
+	position: relative;
+	top: 50px;
+}
+
+.container {
+	position: relative;
+	top: 50px;
+	right: 10px;
+}
+.newsholder{
+	position: relative;
+	top: 50px;
+	left: 450px;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="../layout/navbar.jsp"></jsp:include>
-<div>
-<span>${team.name}</span>
-<table class="table" style="width: 1000px">
 
-				<thead>
-					<tr>
-						
-						<th scope="col">隊伍名稱</th>
-						<th scope="col">勝場</th>
-						<th scope="col">敗場</th>
-						<th scope="col">勝率</th>
-						<th scope="col">勝差</th>
-						<th scope="col">外卡勝差</th>
-					</tr>
-				</thead>
-				<tbody>
+	<div>
+		<div class="nameAndStanding">
+		<div><img src="${contextRoot}/showTeamImage/${team.teamId}" height="150px"></div>
+			
+			<div class="standing">
+				<span style="font-size: 30px">${fullname}</span>
+				<table class="table" style="width: 1000px">
+
+					<thead>
 						<tr>
-							
-							<td><img  src="${contextRoot}/showTeamImage/${team.teamId}" height="20px" width="20px">${team.name}</td>
+
+							<!-- 								<th scope="col">隊伍名稱</th> -->
+							<th scope="col">勝場</th>
+							<th scope="col">敗場</th>
+							<th scope="col">勝率</th>
+							<th scope="col">勝差</th>
+							<th scope="col">外卡勝差</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+
+							<%-- 								<td><img src="${contextRoot}/showTeamImage/${team.teamId}" --%>
+							<%-- 									height="20px" width="20px">${team.name}</td> --%>
 							<td>${team.win}</td>
 							<td>${team.lose}</td>
 							<td>${team.percent}</td>
 							<td>${team.diff}</td>
 							<td>${team.wcb}</td>
 						</tr>
-</tbody>
-</table>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- 			------------------------------ -->
+		<div class="newsholder" style="margin-right: 50px">
+			<h2>近期新聞</h2>
+			<c:forEach var="news" items="${page.content}">
 
-<div class="container">
-		<table id="Ftable_id" class="display">
-			<thead>
 
-			</thead>
-			<tbody>
+				<div class="card mb-3" style="width: 950px; float: top">
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="${news.picFile}" class="img-fluid rounded-start"
+								alt="...">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a
+										href='${contextRoot}/News/ViewNewsPage?id=${news.newsNumber}'>${news.newsTitle}</a>
+								</h5>
+								<p class="card-text">${news.shortIndex}</p>
+								<p class="card-text">
+									<small class="text-muted"><span><fmt:formatDate
+												pattern="yyyy-MM-dd" value="${news.newsDate}" /></span></small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+		<!-- ------------------------			 -->
+		<div class="container">
+			<h2>球員數據</h2>
+			<hr>
+			<h3>野手</h3>
+			<hr>
+			<table id="Ftable_id" class="display">
+				<thead>
 
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+
+		</div>
+
+		<div class="container">
+			<h3>投手</h3>
+			<hr>
+			<table id="Ptable_id" class="display">
+				<thead>
+
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+
+		</div>
 
 	</div>
-	
-	<div class="container">
-		<table id="Ptable_id" class="display">
-			<thead>
-
-			</thead>
-			<tbody>
-
-			</tbody>
-		</table>
-
-	</div>
-
-</div>
-<script type="text/javascript" charset="utf8"
+	<script type="text/javascript" charset="utf8"
 		src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 $(document).ready( function () {

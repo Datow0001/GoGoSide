@@ -225,7 +225,7 @@ public class NBATeamServiceImpl implements NBATeamService {
 
 	@Override
 	public List<NBATeam> findByDiv(String string) {
-		return nDao.findByTeamDiv(string);
+		return nDao.findByTeamDivOrderByPercentDesc(string);
 
 	}
 

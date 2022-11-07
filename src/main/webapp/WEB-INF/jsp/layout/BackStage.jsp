@@ -20,10 +20,12 @@
 	<a href="${contextRoot}/Team/getNBAteam">GetNBAStat--取得NBA球隊戰績</a> <br> 
 	<a href="${contextRoot}/Team/updateNBAteam">updateNBAStat--更新NBA球隊戰績</a> <br> 
 	<a href="${contextRoot}/NBAPlayer/get">updateNBAPlayerStat--取得NBA球員數據</a> <br> 
+	<a href="${contextRoot}/Team/getNBAsch">updateNBAschdule--取得NBA賽程</a> <br> 
 	------------------------------------------------------------------------------- <br> 
 	<a href="${contextRoot}/getNews">getTodayNews--取得今天的MLB新聞</a> <br> 
 	<a href="${contextRoot}/getNBAnews">getTodayNewsNBA--取得今天的NBA新聞</a> <br> 
 	<a href="${contextRoot}/getHighLight">gethighLight--取得HIGHTLIGHT</a> <br> 
 	<a href="${contextRoot}/News/searchNBA">seeNBA--NBA新聞葉面</a> <br> 
+	 
 </body>
 </html>

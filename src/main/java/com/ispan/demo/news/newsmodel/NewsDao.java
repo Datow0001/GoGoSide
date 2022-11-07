@@ -23,4 +23,9 @@ public interface NewsDao extends JpaRepository<News, Integer> {
 //	Page<News> findNBAnews(String word,Pageable pageable);
 	
 	List<News> findBySportType(String type);
+	
+	List<News> findTop3BySportTypeOrderByNewsNumberDesc(String type);
+	
+	@Query(value ="select * from newstable where newsIndex like CONCAT('%',?1,'%')",nativeQuery = true)
+	List<News> findByNewsIndexOrderByNewsNumberDesc(String title);
 }

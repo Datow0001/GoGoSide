@@ -27,7 +27,7 @@
 					<c:forEach var="team" items="${teamlist}" varStatus="s">
 						<tr>
 							
-							<td><a href="${contextRoot}/Team/showTeamInfo?id=${team.teamId}"><img  src="${contextRoot}/showTeamImage/${team.teamId}" height="20px" width="20px">${team.name}</a></td>
+							<td><a href="${contextRoot}/Team/showTeamInfo?id=${team.teamId}"><img  src="${contextRoot}/showTeamImage/${team.teamId}"  width="20px">${team.name}</a></td>
 							
 						</tr>
 					</c:forEach>

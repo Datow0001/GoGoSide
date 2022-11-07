@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface NBATeamDao extends JpaRepository<NBATeam, Integer> {
 
-	List<NBATeam> findByTeamDiv(String string);
+	List<NBATeam> findByTeamDivOrderByPercentDesc(String string);
 	
 	NBATeam findByTeamName(String name);
 	

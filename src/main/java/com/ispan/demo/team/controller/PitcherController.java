@@ -21,7 +21,7 @@ public class PitcherController {
 	@GetMapping("/Player/GetPitcher")
 	public String getPitcher() {
 		ps.getStat();
-		return"index";
+		return"redirect:/";
 	}
 	@GetMapping("/Pitcherstat")
 	public String Pitcherstat() {

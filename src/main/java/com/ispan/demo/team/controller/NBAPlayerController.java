@@ -22,7 +22,7 @@ public class NBAPlayerController {
 	@GetMapping("/NBAPlayer/get")
 	public String getNBAPlayer() {
 		ps.getStat();
-		return"index";				
+		return"redirect:/";				
 	}
 	@GetMapping("/NBAPlayer/Stat")
 	public String NBAPlayerStat() {

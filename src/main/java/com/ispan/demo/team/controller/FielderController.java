@@ -22,7 +22,7 @@ public class FielderController {
 	@GetMapping("/Player/GetFielder")
 	public String getFielder() {
 		fs.getStat();
-		return"index";
+		return"redirect:/";
 	}
 	@GetMapping("/fielderstat")
 	public String fielderstat() {

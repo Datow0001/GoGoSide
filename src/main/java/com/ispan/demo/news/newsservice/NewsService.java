@@ -20,4 +20,6 @@ public interface NewsService {
 	News insert(News news);
 	Page<News> findBySearch(String word);
 	Page<News> findBySport(String word,Integer pageNumber);
-}
+	List<News> findTop3BySportTypeOrderByNewsNumberDesc(String type);
+	Page<News> findByNewsIndex(String title,Integer pageNumber);
+} 

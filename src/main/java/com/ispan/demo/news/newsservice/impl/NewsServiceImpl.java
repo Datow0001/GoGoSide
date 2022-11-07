@@ -449,6 +449,38 @@ public class NewsServiceImpl implements NewsService{
 		Page<News> page = new PageImpl<>(newNews, pageable, list.size());
 		return page;
 	}
+
+	@Override
+	public List<News> findTop3BySportTypeOrderByNewsNumberDesc(String type) {
+		
+		return nDao.findTop3BySportTypeOrderByNewsNumberDesc(type);
+	}
+
+	@Override
+	public Page<News> findByNewsIndex(String title,Integer pageNumber) {
+		List<News> list = nDao.findByNewsIndexOrderByNewsNumberDesc(title);
+		List list2 = new ArrayList<>();
+		Collections.reverse(list);
+		Sort sort = Sort.by(Sort.Direction.DESC, "newsNumber");//sort 沒用
+		Pageable pageable = PageRequest.of(pageNumber-1, 10, sort);
+		if (pageable.getOffset() > list.size()) {
+		    long total = 0L;
+		    PageImpl<News> emptyPage = new PageImpl<>(list2, pageable, total);
+		    return emptyPage;
+		}
+
+		if (pageable.getOffset() <= list.size() && pageable.getOffset() + pageable.getPageSize() > list.size()) {
+		    List<News> bizPojos = list.subList((int)pageable.getOffset(), list.size());
+		    PageImpl<News> pPage = new PageImpl<>(bizPojos, pageable, list.size());
+		    return pPage;
+		}
+
+		List<News> newNews = list.subList((int)pageable.getOffset(), (int)(pageable.getOffset() + pageable.getPageSize()));
+		
+		Page<News> page = new PageImpl<>(newNews, pageable, list.size());
+		return page;
+		
+	}
 	
 
 	

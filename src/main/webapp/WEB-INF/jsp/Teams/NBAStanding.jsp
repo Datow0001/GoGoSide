@@ -44,7 +44,11 @@
 <script src="https://kit.fontawesome.com/104e2ed605.js"
 	crossorigin="anonymous"></script>
 <style>
-
+.holder{
+position: relative;
+	top: 50px;
+	left: 25%;
+}
 </style>
 
 </head>
@@ -56,7 +60,7 @@
 
 	<!-- navbar -->
 	<jsp:include page="../layout/navbar.jsp"></jsp:include>
-	<div>
+	<div class="holder">
 		<c:forEach items="${list}" var="teamlist" varStatus="c">	
 		<c:choose>
 			<c:when test="${c.count==1}"><h3>東區</h3></c:when>
@@ -85,7 +89,7 @@
 						<tr>
 							<th scope="row">${s.count}</th>
 <%-- 						<td><img  src="${contextRoot}/showNBATeamImage/${team.teamId}" height="20px" width="20px">${team.teamName}</td> --%>
-						<td><img  src="${team.teamImageSrc}" height="20px" width="20px">${team.teamName}</td>
+						<td><img  src="${team.teamImageSrc}" height="20px" ><a href="${contextRoot}/Team/showNBATeamInfo?name=${team.teamName}">${team.teamName}</a></td>
 							<td>${team.win}</td>
 							<td>${team.lose}</td>
 							<td>${team.percent}</td>

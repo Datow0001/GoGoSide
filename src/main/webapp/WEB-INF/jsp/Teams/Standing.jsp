@@ -44,7 +44,11 @@
 <script src="https://kit.fontawesome.com/104e2ed605.js"
 	crossorigin="anonymous"></script>
 <style>
-
+.holder{
+position: relative;
+	top: 50px;
+	left: 25%;
+}
 </style>
 
 </head>
@@ -56,13 +60,21 @@
 
 	<!-- navbar -->
 	<jsp:include page="../layout/navbar.jsp"></jsp:include>
-	<div>
-		<c:forEach items="${list}" var="teamlist">
+	<div class="holder">
+		<c:forEach items="${list}" var="teamlist" varStatus="c">
+		<c:choose>
+			<c:when test="${c.count==1}"><h3>美聯東區</h3></c:when>
+			<c:when test="${c.count==2}"><h3>美聯中區</h3></c:when>
+			<c:when test="${c.count==3}"><h3>美聯西區</h3></c:when>
+			<c:when test="${c.count==4}"><h3>國聯東區</h3></c:when>
+			<c:when test="${c.count==5}"><h3>國聯中區</h3></c:when>
+			<c:when test="${c.count==6}"><h3>國聯西區</h3></c:when>
+		</c:choose>	
 			<table class="table" style="width: 1000px">
 				<thead>
 					<tr>
-						<th scope="col">排名</th>
-						<th scope="col">隊伍名稱</th>
+						<th scope="col" width ="90px">排名</th>
+						<th scope="col" width ="150px">隊伍名稱</th>
 						<th scope="col">勝場</th>
 						<th scope="col">敗場</th>
 						<th scope="col">勝率</th>
@@ -74,7 +86,7 @@
 					<c:forEach var="team" items="${teamlist}" varStatus="s">
 						<tr>
 							<th scope="row">${s.count}</th>
-							<td><img  src="${contextRoot}/showTeamImage/${team.teamId}" height="20px" width="20px">${team.name}</td>
+							<td><img  src="${contextRoot}/showTeamImage/${team.teamId}" width="20px" ><a href="${contextRoot}/Team/showTeamInfo?id=${team.teamId}">${team.name}</a></td>
 							<td>${team.win}</td>
 							<td>${team.lose}</td>
 							<td>${team.percent}</td>

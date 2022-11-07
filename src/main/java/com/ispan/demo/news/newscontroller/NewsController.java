@@ -48,12 +48,12 @@ public class NewsController {
 //			System.out.println(date+"已有");
 //		}
 		nService.getNews();
-		return "index";
+		return "redirect:/";
 	}
 	@GetMapping("/getNBAnews")
 	public String getNBAnews() {
 		nService.getNBANews();
-		return"index";
+		return"redirect:/";
 	}
 	
 	@GetMapping("/News/search")
@@ -138,6 +138,30 @@ public class NewsController {
 		model.addAttribute("news2",news2);
 		model.addAttribute("news3",news3);
 		return "/layout/preNews";
+	}
+	
+	@GetMapping("/preNBANews")
+	public String preNBANews(Model model) {
+		List<News> pre = nService.findTop3BySportTypeOrderByNewsNumberDesc("NBA");
+		News news = pre.get(0);
+		News news2 = pre.get(1);
+		News news3 = pre.get(2);
+		model.addAttribute("news",news);
+		model.addAttribute("news2",news2);
+		model.addAttribute("news3",news3);
+		return"redirect:/";
+	}
+	
+	@GetMapping("/preMLBNews")
+	public String preMLBNews(Model model) {
+		List<News> pre = nService.findTop3BySportTypeOrderByNewsNumberDesc("MLB");
+		News news = pre.get(0);
+		News news2 = pre.get(1);
+		News news3 = pre.get(2);
+		model.addAttribute("news",news);
+		model.addAttribute("news2",news2);
+		model.addAttribute("news3",news3);
+		return"redirect:/";
 	}
 	
 	@GetMapping("/delNews")
