@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.ispan.demo.login.model.member.Member;
+import com.ispan.demo.memeber.registor.model.member.Member;
 
 @Entity
 @Table(name="forum_posts")

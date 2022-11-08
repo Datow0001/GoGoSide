@@ -174,9 +174,10 @@
 					<a href="${contextRoot}/personForm" class="user_link"> <span>查看個人資訊</span>
 					</a>
 					<!-- user member -->
-					<a href="${contextRoot}/loginForm" class="user_link"> <i
+					<a href="<c:url value='/member/loginForm'/>" class="user_link"> <i
 						class="fa-solid fa-user"></i>
 					</a>
+					<a href="${contextRoot}/logout">logout</a>
 
 					<!-- user mail -->
 					<a href="" class="user_link"> <i class="fa-solid fa-envelope"></i>

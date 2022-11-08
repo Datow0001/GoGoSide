@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -33,7 +34,10 @@ public class NewsMessages {
 
 	@Column(name = "postIndex")
 	private String postIndex;
-
+	@Lob
+	@Column(name = "postPhoto")
+	private byte[] postPhoto;
+		
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss EEEE", timezone = "GMT+8")
 	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -88,6 +92,14 @@ public class NewsMessages {
 	}
 
 	public NewsMessages() {
+	}
+
+	public byte[] getPostPhoto() {
+		return postPhoto;
+	}
+
+	public void setPostPhoto(byte[] postPhoto) {
+		this.postPhoto = postPhoto;
 	}
 
 }

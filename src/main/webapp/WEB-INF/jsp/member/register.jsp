@@ -53,10 +53,17 @@
 		document.forms[0].userId.focus();
 	}
 </script>
+
+<style type="text/css">
+.error{
+color:red
+}
+</style>
+
 </head>
 
 <body onLoad="setFocusToUserId()">
-<%-- 	<c:set var="funcName" value="REG scope="session"></c:set> --%>
+		<c:set var="funcName" value="REG" scope="session"></c:set>
 
 	<form:form action="${contextRoot}/addMember" method="POST"
 		modelAttribute="newMember" enctype="multipart/form-data"
@@ -122,11 +129,11 @@
 					<div class="form-group">
 						<div class="input-icon">
 							<span class="fables-iconpassword fables-input-icon font-19 mt-1"></span>
-							<form:input type="text" path="id"
+							<form:input type="text" path="personId"
 								class="form-control rounded-0 py-3 pl-5 font-13 sign-register-input"
 								placeholder="身分證字號" />
-							<form:errors path="id" cssClass="error"></form:errors>
-							<span id="idError"></span>
+							<form:errors path="personId" cssClass="error"></form:errors>
+							<span id="personIdError"></span>
 						</div>
 					</div>
 
@@ -209,7 +216,7 @@
 					<button type="submit" id="sendData"
 						class="btn btn-block rounded-0 white-color fables-main-hover-background-color fables-second-background-color font-16 semi-font py-3">現在加入</button>
 					<span id="sendDataError"></span>
-
+					
 					<div id="errorMsg"></div>
 					<a href="#"
 						class="fables-forth-text-color font-16 fables-second-hover-color underline mt-3 mb-4 mb-lg-5 d-block">Forgot
