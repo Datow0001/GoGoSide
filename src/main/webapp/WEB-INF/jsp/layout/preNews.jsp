@@ -50,8 +50,8 @@
 							<span>最新新聞</span>
 							<ul class="filters_menu">
 <!-- 								<li class="active" data-filter="*">棒球</li> -->
-								<li data-filter=".burger"><a href="${contextPath}/preNBANews">NBA</a></li>
-								<li data-filter=".pizza">MLB</li>
+								<li data-filter=".burger"><a href="${contextRoot}/News/searchNBA" style="color:white">NBA</a></li>
+								<li data-filter=".pizza"><a href="${contextRoot}/News/searchMLB" style="color:white">MLB</a></li>
 <!-- 								<li data-filter=".pasta">小聯盟</li> -->
 								<!-- 						<li data-filter=".fries">小棒球</li> -->
 							</ul>
