@@ -10,44 +10,44 @@
 <head>
 <meta charset="UTF-8">
 <title>TeamInfo</title>
+<link href="${contextRoot}/css/team/teamInfo.css" rel="stylesheet">
+
 </head>
 <body>
-<jsp:include page="../layout/navbar.jsp"></jsp:include>
-<div>
+<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
+	<div class="content">
+		<div id="title"><img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">&nbsp;MLB 球隊資訊</div>
 		<c:forEach items="${list}" var="teamlist">
-			<table class="table" style="width: 1000px">
-				<thead>
-					<tr>
-						
-						<th scope="col">隊伍名稱</th>
-						
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="team" items="${teamlist}" varStatus="s">
-						<tr>
-							
-							<td><a href="${contextRoot}/Team/showTeamInfo?id=${team.teamId}"><img  src="${contextRoot}/showTeamImage/${team.teamId}"  width="20px">${team.name}</a></td>
-							
-						</tr>
-					</c:forEach>
-
-
-				</tbody>
-			</table>
-			<br>
+			<span class="cardEach">
+					<table>
+						<thead>
+							<tr>
+								<th scope="col" id="th">隊伍名稱</th>
+							</tr>
+						</thead>
+	
+						<tbody>
+							<c:forEach var="team" items="${teamlist}" varStatus="s">
+								<tr>
+									<td>
+										<img class="teamImg" src="${contextRoot}/showTeamImage/${team.teamId}" width="100%">
+									</td>
+									<td class="teamName">
+										<a class="teamName" href="${contextRoot}/Team/showTeamInfo?id=${team.teamId}">${team.name}</a>
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+			</span>
+			
 		</c:forEach>
-
-
-
-
-
-
-
-
-
-
 	</div>
 
+<jsp:include page="../layout/footer.jsp"></jsp:include>
 </body>
 </html>

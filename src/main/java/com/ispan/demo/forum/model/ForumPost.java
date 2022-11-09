@@ -2,15 +2,12 @@ package com.ispan.demo.forum.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -19,7 +16,6 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.ispan.demo.memeber.registor.model.member.Member;
 
 @Entity
 @Table(name="forum_posts")
@@ -30,10 +26,19 @@ public class ForumPost {
 	@Column(name="postNo")
 	private Integer postNo;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="FK_userId")
-	private Member userId;
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name="FK_userId")
+//	private Member userId;
 	
+	@Column(name="userId", columnDefinition = "nvarchar(20) not null")
+	private String userId;
+
+	@Column(name="sportType", columnDefinition = "nvarchar(50) not null")
+	private String sportType;
+	
+	@Column(name="teamArea", columnDefinition = "nvarchar(50) not null")
+	private String teamArea;
+
 	@Column(name="teamName", columnDefinition = "nvarchar(50) not null")
 	private String teamName;
 	
@@ -58,6 +63,7 @@ public class ForumPost {
 	@Lob
 	@Column(name = "imageFile")
 	private byte[] imageFile;	
+
 	
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss EEE", timezone = "GMT+8")
 	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
@@ -83,15 +89,31 @@ public class ForumPost {
 		this.postNo = postNo;
 	}
 
-	public Member getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Member userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-	public String getTeamName() {
+	public String getSportType() {
+		return sportType;
+	}
+
+	public void setSportType(String sportType) {
+		this.sportType = sportType;
+	}
+
+	public String getTeamArea() {
+        return teamArea;
+    }
+
+    public void setTeamArea(String teamArea) {
+        this.teamArea = teamArea;
+    }
+
+    public String getTeamName() {
 		return teamName;
 	}
 

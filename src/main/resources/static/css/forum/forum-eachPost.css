@@ -82,9 +82,9 @@ body {
 }
 
 .countsIcon {
-	height: 3vh;
-	width: 0.7vw;
-	text-align: center;
+	height: 4vh;
+	width: 1vw;
+	text-align: right;
 	vertical-align: center;
 }
 
@@ -94,7 +94,7 @@ body {
 	font-weight: 400;
 	font-size: 1.2vh;
 	line-height: 1.5em;
-	color: #0A324B;
+	color: gray;
 	padding-left: 0.2vw;
 	text-align: left;
 	vertical-align: center;
@@ -119,11 +119,7 @@ body {
 	border-radius: 10%;
 }
 
-.postBtn a {
-	color: rgb(250, 245, 240);
-}
-
-.postBtn a:link {
+.postBtn a:hover, a:link, a:visited {
 	color: rgb(250, 245, 240);
 	text-decoration: none;
 }
@@ -197,6 +193,60 @@ body {
 #thisPgNo{
 	font-size: 4vh;
 	color: #F5AF4B;
+}
+
+.editBtn {
+	height: 4vh;
+	width: 3vw;
+	margin-left: 0.5vw;
+	font-size: 0.9vw;
+	background-color: #D73C28;
+	color: rgb(250, 245, 240);
+	border: #D73C28 1px solid;
+	border-radius: 10%;
+}
+
+.editBtn a:hover, a:link, a:visited {
+	color: rgb(250, 245, 240);
+	text-decoration: none;
+}
+
+#cmmtSubmitBtn {
+	height: 6vh;
+	width: 4vw;
+	font-size: 1vw;
+	background-color: #F5AF4B;
+	color: rgb(250, 245, 240);
+	border: #F5AF4B 1px solid;
+	border-radius: 10%;
+}
+
+#cmmtSubmitBtn a:hover, a:link, a:visited  {
+	color: rgb(250, 245, 240);
+	text-decoration: none;
+}
+
+
+#myComment {
+	height: 10vh;
+	width: 52vw;
+	margin: 0 1vw 0 0.4vw;
+	padding: 5px;
+	font-size: 1vw;
+	line-height: 1.2em;
+	text-align: top;
+	color: lightgray;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.showCmmtInfo{
+	font-size: 0.8vw;
+	color: gray;
+}
+
+.showCmmtContent{
+	font-size: 1vw;
+	color: #0A324B;
 }
 
 td {

@@ -74,23 +74,23 @@
 										</div>
 
 
-										<p>
-											<span class="slog">使用社群登入</span>
-										</p>
-										<div class="social-login">
-											<a href="#facebook"> <span class="fa fa-facebook" aria-hidden="true"></span>
+<!-- 										<p> -->
+<!-- 											<span class="slog">使用社群登入</span> -->
+<!-- 										</p> -->
+<!-- 										<div class="social-login"> -->
+<!-- 											<a href="#facebook"> <span class="fa fa-facebook" aria-hidden="true"></span> -->
 
 
-											</a> <a href="#twiter"> <span class="fa fa-twitter"
-													aria-hidden="true"></span>
+<!-- 											</a> <a href="#twiter"> <span class="fa fa-twitter" -->
+<!-- 													aria-hidden="true"></span> -->
 
-											</a> <a href="#google"> <span class="fa fa-google-plus"
-													aria-hidden="true"></span>
+<!-- 											</a> <a href="#google"> <span class="fa fa-google-plus" -->
+<!-- 													aria-hidden="true"></span> -->
 
-											</a> <a href="#insta"> <span class="fa fa-pinterest"
-													aria-hidden="true"></span>
-											</a>
-										</div>
+<!-- 											</a> <a href="#insta"> <span class="fa fa-pinterest" -->
+<!-- 													aria-hidden="true"></span> -->
+<!-- 											</a> -->
+<!-- 										</div> -->
 
 										<div class="crt">
 											<span class="continue ">還沒有帳號嗎?建立一個吧!!</span> <a class="btnA"

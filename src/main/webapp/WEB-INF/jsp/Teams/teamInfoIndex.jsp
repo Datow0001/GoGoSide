@@ -37,7 +37,11 @@
 </style>
 </head>
 <body>
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 
 	<div>
 		<div class="nameAndStanding">

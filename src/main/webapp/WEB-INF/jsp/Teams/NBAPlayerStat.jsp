@@ -23,7 +23,6 @@
 	type="">
 <title>Stat</title>
 
-
 <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css"
 	href="${contextRoot}/css/bootstrap.css" />
@@ -36,28 +35,49 @@
 	integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
 	crossorigin="anonymous" />
 
-
-
 <!-- Custom styles for this template -->
 <link href="${contextRoot}/css/index_style.css" rel="stylesheet" />
 <!-- responsive style -->
 <link href="${contextRoot}/css/responsive.css" rel="stylesheet" />
 
-<style>
-</style>
+<link href="${contextRoot}/css/team/teamInfo.css" rel="stylesheet">
+
+	<style>
+		@font-face {
+			src: url(../../fonts/jf-openhuninn-1.1.ttf);
+			font-family: font1;
+		}
+		
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			width: 100vw;
+		}
+		
+		.content {
+			width: 90vw;
+			margin-left: 5vw;
+			font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+		}
+	</style>
 
 </head>
 
 <body>
 
-
-
-
 	<!-- navbar -->
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 
 
-	<div class="container">
+	<div>&nbsp;</div>
+	<div class="content">
 		<table id="table_id" class="display">
 			<thead>
 
@@ -69,50 +89,45 @@
 
 	</div>
 
-
-
-
-	<script type="text/javascript" charset="utf8"
-		src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
-$(document).ready( function () {
-    $('#table_id').DataTable({
-    	"ajax":'http://localhost:8080/my-app/NBAPlayerStat1',
-    	"columns":[
-    		{data:'playerName',title:'球員名稱',},
-    		{data:'pos',title:'位置',},
-    		{data:'team',title:'球隊',},
-    		{data:'age',title:'年齡',},
-    		{data:'game',title:'出賽數',},
-    		{data:'gameStarted',title:'先發數',},
-    		{data:'mp',title:'上場分鐘數',},
-    		{data:'fg',title:'出手命中數',},
-    		{data:'fga',title:'出手數',},
-    		{data:'fgperc',title:'命中率',},
-    		{data:'threefg',title:'三分球命中數',},
-    		{data:'threefga',title:'三分球出手數',},
-    		{data:'threefgperc',title:'三分球命中率',},
-    		{data:'twofg',title:'兩分球命中數',},
-    		{data:'twofga',title:'兩分球出手數',},
-    		{data:'twofgperc',title:'兩分球命中率',},
-    		{data:'efg',title:'有效命中率',},
-    		{data:'ft',title:'罰球命中數',},
-    		{data:'fta',title:'罰球出手數',},
-    		{data:'ftperc',title:'罰球命中率',},
-    		{data:'orb',title:'進攻籃板',},
-    		{data:'drb',title:'防守籃板',},
-    		{data:'trb',title:'總籃板',},
-    		{data:'ast',title:'助攻',},
-    		{data:'stl',title:'抄截',},
-    		{data:'blk',title:'火鍋',},
-    		{data:'tov',title:'失誤',},
-    		{data:'pf',title:'犯規',},
-    		{data:'pts',title:'得分',},
-    	]
-    });
-} );
-
-</script>
+		$(document).ready( function () {
+		    $('#table_id').DataTable({
+		    	"ajax":'http://localhost:8080/my-app/NBAPlayerStat1',
+		    	"columns":[
+		    		{data:'playerName',title:'球員名稱',},
+		    		{data:'pos',title:'位置',},
+		    		{data:'team',title:'球隊',},
+		    		{data:'age',title:'年齡',},
+		    		{data:'game',title:'出賽數',},
+		    		{data:'gameStarted',title:'先發數',},
+		    		{data:'mp',title:'上場分鐘數',},
+		    		{data:'fg',title:'出手命中數',},
+		    		{data:'fga',title:'出手數',},
+		    		{data:'fgperc',title:'命中率',},
+		    		{data:'threefg',title:'三分球命中數',},
+		    		{data:'threefga',title:'三分球出手數',},
+		    		{data:'threefgperc',title:'三分球命中率',},
+		    		{data:'twofg',title:'兩分球命中數',},
+		    		{data:'twofga',title:'兩分球出手數',},
+		    		{data:'twofgperc',title:'兩分球命中率',},
+		    		{data:'efg',title:'有效命中率',},
+		    		{data:'ft',title:'罰球命中數',},
+		    		{data:'fta',title:'罰球出手數',},
+		    		{data:'ftperc',title:'罰球命中率',},
+		    		{data:'orb',title:'進攻籃板',},
+		    		{data:'drb',title:'防守籃板',},
+		    		{data:'trb',title:'總籃板',},
+		    		{data:'ast',title:'助攻',},
+		    		{data:'stl',title:'抄截',},
+		    		{data:'blk',title:'火鍋',},
+		    		{data:'tov',title:'失誤',},
+		    		{data:'pf',title:'犯規',},
+		    		{data:'pts',title:'得分',},
+		    	]
+		    });
+		} );
+	</script>
 
 </body>
 </html>

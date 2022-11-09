@@ -13,6 +13,8 @@ public interface NewsDao extends JpaRepository<News, Integer> {
 	
 	List<News> findTop5ByOrderByNewsClickCountDesc();
 	
+	List<News> findTop10ByOrderByNewsClickCountDesc();
+	
 	List<News> findByNewsDate(Date date);
 	
 //	@Query(value ="select * from newstable where newsIndex like CONCAT('%',?1,'%') ORDER BY ?#{#pageable}",countQuery = "select count(*) from newstable where newsIndex like CONCAT('%',?1,'%')",nativeQuery = true)

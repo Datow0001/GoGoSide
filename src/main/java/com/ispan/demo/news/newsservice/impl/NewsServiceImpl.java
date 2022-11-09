@@ -481,6 +481,11 @@ public class NewsServiceImpl implements NewsService{
 		return page;
 		
 	}
+
+	@Override
+	public List<News> findTopTenClick() {
+		return nDao.findTop10ByOrderByNewsClickCountDesc();
+	}
 	
 
 	

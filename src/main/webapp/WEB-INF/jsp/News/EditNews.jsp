@@ -12,7 +12,11 @@
 <title>EditNews</title>
 </head>
 <body>
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 
 	<div class="container">
 	<form:form action="${contextRoot}/News/postEditNews" method="post" modelAttribute="News">

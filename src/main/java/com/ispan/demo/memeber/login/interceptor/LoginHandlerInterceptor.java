@@ -71,7 +71,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
 //		String servletPath = request.getServletPath();
 		boolean login = false;
 //		System.out.println(servletPath);
-			if (servletPath.contains("/personForm")||servletPath.contains("Back")) {
+			if (servletPath.contains("/personForm")||servletPath.contains("Back")||servletPath.contains("forum/add")) {
 				
 				login = true;
 			

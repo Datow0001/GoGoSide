@@ -191,7 +191,7 @@ public class NewsController {
 		model.addAttribute("news",news);
 		model.addAttribute("news2",news2);
 		model.addAttribute("news3",news3);
-		return"redirect:/";
+		return"redirect:/index";
 	}
 	
 	@GetMapping("/delNews")

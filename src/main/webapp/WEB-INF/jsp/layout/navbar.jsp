@@ -116,32 +116,32 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="${contextRoot}/">果果賽 <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" role="button"
-						data-toggle="dropdown" aria-expanded="false">運動</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Regular link</a> <a
-								class="dropdown-item disabled">Disabled link</a> <a
-								class="dropdown-item" href="#">Another link</a>
-						</div></li>
+<!-- 					<li class="nav-item dropdown"><a -->
+<!-- 						class="nav-link dropdown-toggle" href="#" role="button" -->
+<!-- 						data-toggle="dropdown" aria-expanded="false">運動</a> -->
+<!-- 						<div class="dropdown-menu"> -->
+<!-- 							<a class="dropdown-item" href="#">Regular link</a> <a -->
+<!-- 								class="dropdown-item disabled">Disabled link</a> <a -->
+<!-- 								class="dropdown-item" href="#">Another link</a> -->
+<!-- 						</div></li> -->
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" role="button"
 						data-toggle="dropdown" aria-expanded="false">賽事</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Regular link</a> <a
-								class="dropdown-item disabled">Disabled link</a> <a
-								class="dropdown-item" href="#">Another link</a>
+							<a class="dropdown-item" href="${contextRoot}/Team/Standing">MLB戰績</a>							
+							<a class="dropdown-item" href="${contextRoot}/Team/NBAstand">NBA戰績</a>							
+							<a class="dropdown-item" href="${contextRoot}/Schedule">MLB賽程</a>
+							<a class="dropdown-item" href="${contextRoot}/NBASchedule">NBA賽程</a>
+							<a class="nav-link" href="${contextRoot}/WatchScore">GetDayScore</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" role="button"
 						data-toggle="dropdown" aria-expanded="false">球隊</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${contextRoot}/Team/teamInfo">MLB球隊資訊</a>
+							<a class="dropdown-item" href="${contextRoot}/Pitcherstat">MLB投手數據</a>
+							<a class="dropdown-item" href="${contextRoot}/fielderstat">MLB野手數據</a>
 							<a class="dropdown-item" href="${contextRoot}/Team/NBATeamInfo">NBA球隊資訊</a>
-							<a class="dropdown-item" href="${contextRoot}/Team/Standing">MLB戰績</a>
-							<a class="dropdown-item" href="${contextRoot}/Team/NBAstand">NBA戰績</a>
-							<a class="dropdown-item" href="${contextRoot}/Pitcherstat">投手數據</a>
-							<a class="dropdown-item" href="${contextRoot}/fielderstat">野手數據</a>
 							<a class="dropdown-item" href="${contextRoot}/NBAPlayer/Stat">NBA球員數據</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
@@ -149,57 +149,68 @@
 						data-toggle="dropdown" aria-expanded="false">新聞</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${contextRoot}/News/newsPage">新聞列表</a>
-<!-- 							<a class="dropdown-item disabled">Disabled link</a>  -->
-							
-							<a class="dropdown-item" href="${contextRoot}/News/searchMLB">MLB</a>
-							<a class="dropdown-item" href="${contextRoot}/News/searchNBA">NBA</a>
+							<!-- 							<a class="dropdown-item disabled">Disabled link</a>  -->
+
+							<a class="dropdown-item" href="${contextRoot}/News/searchMLB">MLB新聞</a>
+							<a class="dropdown-item" href="${contextRoot}/News/searchNBA">NBA新聞</a>
 						</div></li>
 
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" role="button"
 						data-toggle="dropdown" aria-expanded="false">討論</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="${contextRoot}/forum/">討論區</a> <a
-								class="dropdown-item" href="#">我的文章</a> <a class="dropdown-item"
-								href="#">收藏文章</a> <a class="dropdown-item"
-								href="${contextRoot}/forum/add">新增文章</a>
+							<a class="dropdown-item" href="${contextRoot}/forum/">討論區</a>
+<!-- 							 <a	class="dropdown-item" href="#">我的文章</a>  -->
+<!-- 							 <a class="dropdown-item" href="#">收藏文章</a>  -->
+							 <a class="dropdown-item" href="${contextRoot}/forum/add">新增文章</a>
 						</div></li>
 				</ul>
-
+				<c:if test="${!empty IsAdmin}">
 					<a href="${contextRoot}/Back"> <span>後台</span>
 					</a>
+				</c:if>
 				<!-- user -->
 				<div class="user_option">
 
-					<a href="${contextRoot}/personForm" class="user_link"> <span>查看個人資訊</span>
-					</a>
-					<!-- user member -->
-					<a href="<c:url value='/member/loginForm'/>" class="user_link"> <i
-						class="fa-solid fa-user"></i>
-					</a>
-					<a href="${contextRoot}/logout">logout</a>
 
+					<!-- user member -->
+					<c:if test="${empty LoginOK}">
+						<a href="<c:url value='/member/loginForm'/>"> 登入 </a>
+					</c:if>
+					<%-- 					<a href="<c:url value='/member/loginForm'/>" class="user_link">  --%>
+					<!-- 					</a> -->
+					<c:if test="${!empty LoginOK}">
+						<a href="${contextRoot}/logout">登出</a>
+					</c:if>
+					<a href="${contextRoot}/personForm" class="user_link"><i
+						class="fa-solid fa-user"></i> </a>
 					<!-- user mail -->
-					<a href="" class="user_link"> <i class="fa-solid fa-envelope"></i>
-					</a>
+<!-- 					<a href="" class="user_link"> <i class="fa-solid fa-envelope"></i> -->
+<!-- 					</a> -->
 
 					<!-- search -->
 					<nav class="navbar navbar-light">
-						<form class="form-inline">
+						<form class="form-inline" action="${contextRoot}/News/search" method="get">
 							<div style="align-items: center;" class="input-group">
 								<span
 									style="width: 30px; display: flex; justify-content: center;"
 									class="search_border input-group-text">
-									<button class="btn my-2 my-sm-0 nav_search-btn " type="submit">
+									<button class="btn my-2 my-sm-0 nav_search-btn " type="submit" name="submit">
 										<i class="fa-solid fa-magnifying-glass"></i>
 									</button>
 								</span> <input type="text" class=" search_font search_border"
 									placeholder="搜尋" aria-label="search"
+									name="word"
 									aria-describedby="basic-addon1">
 							</div>
 						</form>
 					</nav>
-
+<!-- ============ -->
+<%-- 				<form action="${contextRoot}/News/search" method="get"> --%>
+<!-- 					<textarea name="word" class="form-control"></textarea> -->
+<!-- 					<input type="submit" name="submit" value="送出"> -->
+<!-- 				</form> -->
+<!-- ================ -->
 
 				</div>
 
@@ -213,9 +224,9 @@
 
 <!-- jQery -->
 <script src="${contextRoot}/js/jquery-3.6.1.min.js"
-	type="text/javascript"></script>
-<!-- bootstrap js -->
-<script src="${contextRoot}/js/bootstrap.bundle.min.js"
-	type="text/javascript"></script>
+type="text/javascript"></script> 
+<!-- <!-- bootstrap js --> 
+<script src="${contextRoot}/js/bootstrap.bundle.min.js" 
+type="text/javascript"></script> 
 
 </html>

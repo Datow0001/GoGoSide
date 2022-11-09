@@ -43,71 +43,78 @@
 <link href="${contextRoot}/css/responsive.css" rel="stylesheet" />
 <script src="https://kit.fontawesome.com/104e2ed605.js"
 	crossorigin="anonymous"></script>
-<style>
-.holder{
-position: relative;
-	top: 50px;
-	left: 25%;
-}
-</style>
+
+<link href="${contextRoot}/css/team/standing.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-
-
-
 	<!-- navbar -->
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
-	<div class="holder">
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
+	<div class="content">
+	
 		<c:forEach items="${list}" var="teamlist" varStatus="c">	
 		<c:choose>
-			<c:when test="${c.count==1}"><h3>東區</h3></c:when>
-			<c:when test="${c.count==2}"><h3>西區</h3></c:when>
-		</c:choose>		  
-			<table class="table" style="width: 1000px">
+			<c:when test="${c.count==1}">
+				<div class="title">
+				<img id="icon" src="${contextRoot}/images/forumImages/basketball-icon.jpg" width="100%">
+				&nbsp;NBA 戰績 > 東區</div>
+			</c:when>
+			<c:when test="${c.count==2}">
+				<div class="title">
+				<img id="icon" src="${contextRoot}/images/forumImages/basketball-icon.jpg" width="100%">
+				&nbsp;NBA 戰績 > 西區</div>
+			</c:when>
+		</c:choose>	
+		<div class="cardEach">
+			<table class="table">
 				<thead>
 					<tr>
-						<th scope="col">排名</th>
-						<th scope="col">隊伍名稱</th>
-						<th scope="col">勝場</th>
-						<th scope="col">敗場</th>
-						<th scope="col">勝率</th>
-						<th scope="col">勝差</th>
-						<th scope="col">每場得分</th>
-						<th scope="col">每場失分</th>
-						<th scope="col">得失分差</th>
-						<th scope="col">主場</th>
-						<th scope="col">客場</th>
-						<th scope="col">近況</th>
-						<th scope="col">近十場</th>						
+						<th scope="col" class="col1">排名</th>
+						<th scope="col" class="col2">隊伍名稱</th>
+						<th scope="col" class="col1">勝場</th>
+						<th scope="col" class="col1">敗場</th>
+						<th scope="col" class="col1">勝率</th>
+						<th scope="col" class="col1">勝差</th>
+						<th scope="col" class="col1">每場得分</th>
+						<th scope="col" class="col1">每場失分</th>
+						<th scope="col" class="col1">得失分差</th>
+						<th scope="col" class="col1">主場</th>
+						<th scope="col" class="col1">客場</th>
+						<th scope="col" class="col1">近況</th>
+						<th scope="col" class="col4">近十場</th>						
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="team" items="${teamlist}" varStatus="s">
 						<tr>
-							<th scope="row">${s.count}</th>
-<%-- 						<td><img  src="${contextRoot}/showNBATeamImage/${team.teamId}" height="20px" width="20px">${team.teamName}</td> --%>
-						<td><img  src="${team.teamImageSrc}" height="20px" ><a href="${contextRoot}/Team/showNBATeamInfo?name=${team.teamName}">${team.teamName}</a></td>
-							<td>${team.win}</td>
-							<td>${team.lose}</td>
-							<td>${team.percent}</td>
-							<td>${team.gb}</td>
-							<td>${team.ppg}</td>
-							<td>${team.oppg}</td>
-							<td>${team.diff}</td>
-							<td>${team.home}</td>
-							<td>${team.road}</td>
-							<td>${team.strk}</td>
-							<td>${team.lastTen}</td>
+							<th scope="row" class="col1">${s.count}</th>
+							<td class="col3">
+								<img class="teamImg" src="${team.teamImageSrc}" width="100%" >
+								<a href="${contextRoot}/Team/showNBATeamInfo?name=${team.teamName}">
+								${team.teamName}</a>
+							</td>
+							<td class="col1">${team.win}</td>
+							<td class="col1">${team.lose}</td>
+							<td class="col1">${team.percent}</td>
+							<td class="col1">${team.gb}</td>
+							<td class="col1">${team.ppg}</td>
+							<td class="col1">${team.oppg}</td>
+							<td class="col1">${team.diff}</td>
+							<td class="col1">${team.home}</td>
+							<td class="col1">${team.road}</td>
+							<td class="col1">${team.strk}</td>
+							<td class="col4">${team.lastTen}</td>
 						</tr>
 					</c:forEach>
-
-
 				</tbody>
 			</table>
-			<br>
+		</div>	  
 		</c:forEach>
 
 
@@ -120,6 +127,7 @@ position: relative;
 
 
 	</div>
+<jsp:include page="../layout/footer.jsp"></jsp:include>
 <%-- 	<a href="${contextRoot}/Team/getTeam">getStanding</a> --%>
 <%-- 	<a href="${contextRoot}/Team/updateStanding">updateStanding</a> --%>
 <%-- 	<a href="${contextRoot}/Team/getImg">getImg</a> --%>

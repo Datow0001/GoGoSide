@@ -24,7 +24,7 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="https://img.youtube.com/vi/5iYM8NcTcak/maxresdefault.jpg"
+				<img src="${url0}"
 					class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
 					<h5>${hl0.title}</h5>
@@ -32,7 +32,7 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="https://img.youtube.com/vi/5iYM8NcTcak/maxresdefault.jpg"
+				<img src="${url1}"
 					class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
 					<h5>${hl1.title}</h5>
@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="https://img.youtube.com/vi/5iYM8NcTcak/maxresdefault.jpg"
+				<img src="${url2}"
 					class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
 					<h5>${hl2.title}</h5>
@@ -61,6 +61,6 @@
 		</button>
 	</div>
 </body>
-<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script>
-<script src="${contextRoot}/js/bootstrap.js"></script>
+<%-- <script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
+<%-- <script src="${contextRoot}/js/bootstrap.js"></script> --%>
 </html>

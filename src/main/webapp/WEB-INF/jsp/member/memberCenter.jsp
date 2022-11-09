@@ -45,7 +45,11 @@
 
 				<body>
 					<!-- navbar -->
-					<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 
 					<form:form action="${contextRoot}/personForm" method="POST" modelAttribute="member"
 						enctype="multipart/form-data" Object="">

@@ -16,38 +16,43 @@ body {
 	flex-direction: column;
 }
 
-.container {
-	overflow: auto;
-	width: 98%;
-	min-height: 100%;
-	margin-bottom: -10%;
-	padding: 1% 1% 10% 1%;
-	float: center;
-	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+.boxLeft {
+	width: 16vw;
+	float: left;
+	margin-left: 10vw;
 }
 
-.article {
-	background-color: #0A324B;
-	width: 58vw;
+.boxRight {
+	width: 60vw;
 	float: right;
-	padding: 2%;
-	border: #0A324B solid 5px;
-	border-radius: 10px;
-	display: inline-block;
+	margin-right: 12vw;
+	padding: 0.5vh 1.2vw 2.5vh 1.2vw;
+	background-color: #0A324B;
+	border: #0A324B solid 1px;
+	border-radius: 20px;
 }
 
-.aside {
-	float: left;
-	width: 13vw;
+.boxConfirm {
+	width: 60vw;
+	float: right;
+	margin-right: 12vw;
+}
+
+.tableLeft{
+	width: 18vw;
 	text-align: center;
-	display: inline-block;
+	vertical-align: middle;	
 }
 
-.confirm {
-	width: 96%;
-	float: left;
-	padding: 2% 0 0 20%;
-	display: inline-block;
+.tableRight{
+	width: 57.5vw;
+}
+
+.tdRight{
+	text-align: left;
+	vertical-align: middle;
+	height: 5.8vh;
+	color: lightgray;
 }
 
 .userId {
@@ -64,17 +69,16 @@ body {
 }
 
 .description {
-	float: left;
+	text-align: left;
 	font-size: 2vh;
-	margin-bottom: 2vh;
 	color: lightgray;
 }
 
 .teamSelect {
 	height: 6vh;
 	width: 12vw;
-	margin-top: 4vh;
-	margin-right: 1vw;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
 	padding: 2%;
 	border: #F5AF4B 3px solid;
 	border-radius: 10px;
@@ -83,15 +87,9 @@ body {
 	color: #F5AF4B;
 }
 
-.teamOption {
-	color: gray;
-}
-
 #inputTitle {
 	height: 4.5vh;
-	width: 54vw;
-	margin-right: 2vw;
-	margin-top: 1vh;
+	width: 57.5vw;
 	padding: 5px;
 	font-size: 1vw;
 	line-height: 2em;
@@ -99,10 +97,11 @@ body {
 }
 
 .ck-editor__editable_inline {
-    min-height: 50vh;
-  	height: 50vh;
-  	width: 54vw;
+    min-height: 46vh;
+  	height: 46vh;
+  	width: 57.5vw;
   	color: gray;
+  	line-height: 1em;
 }
 
 .postBtn {
@@ -115,3 +114,9 @@ body {
 	border-radius: 10%;
 	cursor: pointer;
 }
+
+.postBtn a:hover, a:link, a:visited{
+	color: rgb(250, 245, 240);
+	text-decoration: none;
+}
+

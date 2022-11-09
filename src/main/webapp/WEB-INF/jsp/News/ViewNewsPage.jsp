@@ -91,7 +91,11 @@
 </head>
 
 <body>
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
+<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 
 	<div class="container">
 		<div style="float: right">
@@ -154,32 +158,33 @@
 					<!-- ---------------- -->
 					<c:if test="${!empty LoginOK}">
 						<form:form action="${contextRoot}/News/ViewNewsPage" method="post"
-						modelAttribute="newsMessage" enctype="multipart/form-data">
+							modelAttribute="newsMessage" enctype="multipart/form-data">
 
-						<div class="input-group">
-							<form:input path="userId" value="${LoginOK.userId}" type="hidden" id="id" class="form-control" />
-							
-							<form:textarea path="postIndex" id="index" class="form-control" />
-							<form:input type="hidden" value="${News.newsNumber}"
-								path="newsNumber" class="form-control" />
-						</div>
-						<button type="submit" name="submit" id="submit" value="送出">送出</button>
-						<span id="err"></span>
-					</form:form>
+							<div class="input-group">
+								<form:input path="userId" value="${LoginOK.userId}"
+									type="hidden" id="id" class="form-control" />
+
+								<form:textarea path="postIndex" id="index" class="form-control" />
+								<form:input type="hidden" value="${News.newsNumber}"
+									path="newsNumber" class="form-control" />
+							</div>
+							<button type="submit" name="submit" id="submit" value="送出">送出</button>
+							<span id="err"></span>
+						</form:form>
 					</c:if>
-<!-- 					--------------------- -->
-<%-- 					<form:form action="${contextRoot}/News/ViewNewsPage" method="post" --%>
-<%-- 						modelAttribute="newsMessage"> --%>
+					<!-- 					--------------------- -->
+					<%-- 					<form:form action="${contextRoot}/News/ViewNewsPage" method="post" --%>
+					<%-- 						modelAttribute="newsMessage"> --%>
 
-<!-- 						<div class="input-group"> -->
-<%-- 							<form:textarea path="userId" id="id" class="form-control" /> --%>
-<%-- 							<form:textarea path="postIndex" id="index" class="form-control" /> --%>
-<%-- 							<form:input type="hidden" value="${News.newsNumber}" --%>
-<%-- 								path="newsNumber" class="form-control" /> --%>
-<!-- 						</div> -->
-<!-- 						<button type="submit" name="submit" id="submit" value="送出">送出</button> -->
-<!-- 						<span id="err"></span> -->
-<%-- 					</form:form> --%>
+					<!-- 						<div class="input-group"> -->
+					<%-- 							<form:textarea path="userId" id="id" class="form-control" /> --%>
+					<%-- 							<form:textarea path="postIndex" id="index" class="form-control" /> --%>
+					<%-- 							<form:input type="hidden" value="${News.newsNumber}" --%>
+					<%-- 								path="newsNumber" class="form-control" /> --%>
+					<!-- 						</div> -->
+					<!-- 						<button type="submit" name="submit" id="submit" value="送出">送出</button> -->
+					<!-- 						<span id="err"></span> -->
+					<%-- 					</form:form> --%>
 				</div>
 			</div>
 			<article class="article">
@@ -204,11 +209,12 @@
 								<td class="userName" colspan="2">
 									<div class="userName">${workMessage.userId}</div>
 								</td>
-								<td class="edit" rowspan="2"><a
-									onclick="return confirm('確定刪除?')"
-									href='${contextRoot}/delMessage?delid=${workMessage.postNumber}'>刪除</a>
-								</td>
-
+								<c:if test="${!empty IsAdmin}">
+									<td class="edit" rowspan="2"><a
+										onclick="return confirm('確定刪除?')"
+										href='${contextRoot}/delMessage?delid=${workMessage.postNumber}'>刪除</a>
+									</td>
+								</c:if>
 							</tr>
 							<tr>
 								<td class="forumTime" colspan="2">
@@ -230,9 +236,12 @@
 			</article>
 		</div>
 	</div>
-	<a onclick="return confirm('確定刪除?')"
-		href='${contextRoot}/delNews?delid=${News.newsNumber}'>del</a>
-	<a href='${contextRoot}/News/EditNews?id=${News.newsNumber}'>edit</a>
+	<c:if test="${!empty IsAdmin}">
+		<a onclick="return confirm('確定刪除?')"
+			href='${contextRoot}/delNews?delid=${News.newsNumber}'><button>del</button></a>
+		<a href='${contextRoot}/News/EditNews?id=${News.newsNumber}'><button>edit</button></a>
+	</c:if>
+	<div style="margin-top:300px">	<jsp:include page="../layout/footer.jsp"></jsp:include></div>
 
 	<script>
 		let input = document.querySelector("#id");

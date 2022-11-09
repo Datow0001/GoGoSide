@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Roboto+Condensed:wght@700&display=swap");
-/* slider section */
-.slider_section {
+#test002 {
+  /* slider section */
+}
+#test002 .slider_section {
   margin: 0 4% 2% 4%;
   padding: 2% 4%;
   font-family: "Noto Sans TC", sans-serif;
@@ -10,33 +12,30 @@
   background-color: #0A324B;
   border-radius: 50px;
 }
-.slider_section .tit {
+#test002 .slider_section .tit {
   color: rgba(255, 255, 255, 0.8941176471);
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto Condensed", sans-serif;
-  display: flex;
-  text-align: center;
 }
-.slider_section .tit span {
+#test002 .slider_section .tit span {
   padding: 0px;
   margin-left: 2%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: flex;
   font-weight: 500;
   text-align: center;
   align-items: center;
   letter-spacing: 2px;
+  justify-content: center;
+  margin-bottom: 12px;
 }
-.slider_section .tit .filters_menu {
+#test002 .slider_section .tit .filters_menu {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   list-style-type: none;
   border: none;
-  padding: 0px;
-  width: 85%;
 }
-.slider_section .tit .filters_menu li {
+#test002 .slider_section .tit .filters_menu li {
   padding: 7px 20px;
   margin-right: 1%;
   cursor: pointer;
@@ -45,27 +44,27 @@
   font-weight: 350;
   background-color: #F5AF4B;
   font-size: 1rem;
+  margin-bottom: 8px;
 }
-.slider_section .tit .filters_menu li.active {
+#test002 .slider_section .tit .filters_menu li.active {
   background-color: #F5AF4B;
   color: #0A324B;
 }
-.slider_section .tit .filters_menu li:hover {
+#test002 .slider_section .tit .filters_menu li:hover {
   color: #0A324B;
   text-decoration: none;
   transition: all 0.3s;
 }
-.slider_section .row {
+#test002 .slider_section .row {
   align-items: center;
   align-items: flex-start;
   margin-top: 1%;
-  border: #D73C28 solid 3px;
 }
-.slider_section .row #customCarousel1 {
+#test002 .slider_section .row #customCarousel1 {
   width: 100%;
   position: unset;
 }
-.slider_section .row .detail-box {
+#test002 .slider_section .row .detail-box {
   color: rgba(255, 255, 255, 0.8941176471);
   display: flex;
   flex-wrap: wrap;
@@ -73,19 +72,19 @@
   vertical-align: middle;
   padding: 1.4%;
 }
-.slider_section .row .detail-box h3 {
+#test002 .slider_section .row .detail-box h3 {
   font-size: 2.2rem;
   font-weight: bold;
 }
-.slider_section .row .detail-box p {
+#test002 .slider_section .row .detail-box p {
   font-size: 18px;
   letter-spacing: 2px;
 }
-.slider_section .row .detail-box .btn1:hover {
+#test002 .slider_section .row .detail-box .btn1:hover {
   color: rgba(255, 255, 255, 0.8941176471);
   text-decoration: none;
 }
-.slider_section .row .detail-box a {
+#test002 .slider_section .row .detail-box a {
   display: inline-block;
   padding: 10px 45px;
   background-color: #F5AF4B;
@@ -94,10 +93,10 @@
   transition: all 0.3s;
   border: none;
 }
-.slider_section .row .detail-box a:hover {
+#test002 .slider_section .row .detail-box a:hover {
   background-color: #e78d0d;
 }
-.slider_section .row .slp {
+#test002 .slider_section .row .slp {
   position: relative;
   overflow: auto;
   -o-object-position: center;
@@ -110,21 +109,21 @@
   height: 100%;
   border-radius: 10px;
 }
-.slider_section .carousel-indicators {
+#test002 .slider_section .carousel-indicators {
   position: relative;
   justify-content: center;
   display: flex;
   align-items: center;
   margin-top: 38%;
 }
-.slider_section .carousel-indicators li {
+#test002 .slider_section .carousel-indicators li {
   background-color: #F5AF4B;
   width: 12px;
   height: 12px;
   border-radius: 100%;
   opacity: 1;
 }
-.slider_section .carousel-indicators li.active {
+#test002 .slider_section .carousel-indicators li.active {
   width: 20px;
   height: 20px;
   background-color: #F5AF4B;

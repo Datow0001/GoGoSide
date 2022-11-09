@@ -36,28 +36,48 @@
 	integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
 	crossorigin="anonymous" />
 
-
-
 <!-- Custom styles for this template -->
 <link href="${contextRoot}/css/index_style.css" rel="stylesheet" />
 <!-- responsive style -->
 <link href="${contextRoot}/css/responsive.css" rel="stylesheet" />
 
-<style>
-</style>
+<link href="${contextRoot}/css/team/teamInfo.css" rel="stylesheet">
+
+	<style>
+		@font-face {
+			src: url(../../fonts/jf-openhuninn-1.1.ttf);
+			font-family: font1;
+		}
+		
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			width: 100vw;
+		}
+		
+		.content {
+			width: 90vw;
+			margin-left: 5vw;
+			font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+		}
+	</style>
 
 </head>
 
 <body>
 
-
-
-
 	<!-- navbar -->
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 
-
-	<div class="container">
+	<div>&nbsp;</div>
+	<div class="content">
 		<table id="table_id" class="display">
 			<thead>
 
@@ -66,42 +86,37 @@
 
 			</tbody>
 		</table>
-
 	</div>
-
-
-
-
+	
 	<script type="text/javascript" charset="utf8"
 		src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
-$(document).ready( function () {
-    $('#table_id').DataTable({
-    	"ajax":'http://localhost:8080/my-app/FielderStat1',
-    	"columns":[
-    		{data:'fielderName',title:'球員名稱',},
-    		{data:'fielderPos',title:'守備位置',},
-    		{data:'team',title:'球隊',},
-    		{data:'gamePlayed',title:'總場數',},
-    		{data:'ab',title:'打數',},
-    		{data:'hit',title:'安打',},
-    		{data:'sbh',title:'二壘安打',},
-    		{data:'tbh',title:'三壘安打',},
-    		{data:'hr',title:'全壘打',},
-    		{data:'rbi',title:'打點',},
-    		{data:'bb',title:'保送',},
-    		{data:'so',title:'三振',},
-    		{data:'sb',title:'盜壘',},
-    		{data:'cs',title:'盜壘刺',},
-    		{data:'avg',title:'打擊率',},
-    		{data:'obp',title:'上壘率',},
-    		{data:'slg',title:'長打率',},
-    		{data:'ops',title:'攻擊指數',},
-    	]
-    });
-} );
-
-</script>
+		$(document).ready( function () {
+		    $('#table_id').DataTable({
+		    	"ajax":'http://localhost:8080/my-app/FielderStat1',
+		    	"columns":[
+		    		{data:'fielderName',title:'球員名稱',},
+		    		{data:'fielderPos',title:'守備位置',},
+		    		{data:'team',title:'球隊',},
+		    		{data:'gamePlayed',title:'總場數',},
+		    		{data:'ab',title:'打數',},
+		    		{data:'hit',title:'安打',},
+		    		{data:'sbh',title:'二壘安打',},
+		    		{data:'tbh',title:'三壘安打',},
+		    		{data:'hr',title:'全壘打',},
+		    		{data:'rbi',title:'打點',},
+		    		{data:'bb',title:'保送',},
+		    		{data:'so',title:'三振',},
+		    		{data:'sb',title:'盜壘',},
+		    		{data:'cs',title:'盜壘刺',},
+		    		{data:'avg',title:'打擊率',},
+		    		{data:'obp',title:'上壘率',},
+		    		{data:'slg',title:'長打率',},
+		    		{data:'ops',title:'攻擊指數',},
+		    	]
+		    });
+		} );
+	</script>
 
 </body>
 </html>

@@ -54,7 +54,7 @@ public class LoginController {
 	
 //		Member user=mService.cheakIdPassword(login.getUserId(), login.getPassword());
 		Login user=mService.cheakIdPassword(login.getUserId(), login.getPassword());
-		
+		Member member = mService.findByUserId(login.getUserId());
 		if (user==null) {
 			bindingResult.rejectValue("password", null, "請輸入正確帳號密碼");
 		}
@@ -65,12 +65,17 @@ public class LoginController {
 			}
 			return "member/login";
 		}else {		
-//			HttpSession session = request.getSession();
+			HttpSession session = request.getSession();
 			processCookeies(login, request, response);
 			String nextPath=(String)model.getAttribute("servletPath");
 //			String nextPath=(String)session.getAttribute("servletPath");
 			System.out.println("nextPath:"+nextPath);
 			model.addAttribute("LoginOK",user);
+			if(member.getRoles()==null) {}
+			else if(member.getRoles().equals("admin")) {
+				session.setAttribute("IsAdmin",member);
+				
+			}
 			if(nextPath==null) {
 				nextPath="/";
 			}

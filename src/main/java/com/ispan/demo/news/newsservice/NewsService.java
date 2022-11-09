@@ -22,4 +22,5 @@ public interface NewsService {
 	Page<News> findBySport(String word,Integer pageNumber);
 	List<News> findTop3BySportTypeOrderByNewsNumberDesc(String type);
 	Page<News> findByNewsIndex(String title,Integer pageNumber);
+	List<News> findTopTenClick();
 } 

@@ -47,12 +47,12 @@
 					<div id="customCarousel1" class="carousel slide" data-ride="carousel">
 
 						<div class="tit">
-							<span>熱門新聞</span>
+							<span>最新新聞</span>
 							<ul class="filters_menu">
-								<li class="active" data-filter="*">棒球</li>
-								<li data-filter=".burger">車隊</li>
-								<li data-filter=".pizza">大聯盟</li>
-								<li data-filter=".pasta">小聯盟</li>
+<!-- 								<li class="active" data-filter="*">棒球</li> -->
+								<li data-filter=".burger"><a href="${contextPath}/preNBANews">NBA</a></li>
+								<li data-filter=".pizza">MLB</li>
+<!-- 								<li data-filter=".pasta">小聯盟</li> -->
 								<!-- 						<li data-filter=".fries">小棒球</li> -->
 							</ul>
 
@@ -148,8 +148,8 @@
 
 		<!-- jQery -->
 		<!-- jQery -->
-		<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script>
+<%-- 		<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
 		<!-- bootstrap js -->
-		<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script>
+<%-- 		<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
 
 		</html>

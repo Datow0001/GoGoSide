@@ -19,48 +19,74 @@
 
 </head>
 <body onload="init();">
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
-	<div class="container">
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
+	<div>
 		<form:form name="F" action="${contextRoot}/forum/add" method="post"
 			enctype="multipart/form-data" modelAttribute="forumPost">
-			<div class="aside">
-				<div>
-					<img class="userImg" src="../images/forumImages/user_baseball.jpg">
-				</div>
-				<div class="userId">userId_123456</div>
-				
-				<select class=teamSelect name="teamAreas" onChange="FirstConfirm(this.selectedIndex);">
-		            <option class=teamOption selected>請選擇聯盟及分區</option>
-		            <option class=teamOption>美國聯盟【AL】東區</option>
-		            <option class=teamOption>美國聯盟【AL】中區</option>
-		            <option class=teamOption>美國聯盟【AL】西區</option>
-		            <option class=teamOption>國家聯盟【NL】東區</option>
-		            <option class=teamOption>國家聯盟【NL】中區</option>
-		            <option class=teamOption>國家聯盟【NL】西區</option>
-		        </select>
-		        <select class=teamSelect name="teamName" onChange="FinalConfirm(this.selectedIndex)"></select>
+			<div class="boxLeft">
+				<table class="tableLeft">
+					<tr>
+						<td><img class="userImg" src="${contextRoot}/showUserImage"></td>
+					</tr>
+					<tr>
+						<td><div class="userId">${LoginOK.userId}</div></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<form:input type="hidden" value="${LoginOK.userId}" path="userId"
+												class="form-control" />
+							<form:input type="hidden" value="baseball" path="sportType"
+												class="form-control" />
+							<select class="teamSelect" name="teamArea" onChange="FirstConfirm(this.selectedIndex);">
+					            <option class="teamOption" selected>請選擇聯盟及分區</option>
+					            <option class="teamOption">美國聯盟【AL】東區</option>
+					            <option class="teamOption">美國聯盟【AL】中區</option>
+					            <option class="teamOption">美國聯盟【AL】西區</option>
+					            <option class="teamOption">國家聯盟【NL】東區</option>
+					            <option class="teamOption">國家聯盟【NL】中區</option>
+					            <option class="teamOption">國家聯盟【NL】西區</option>
+			        		</select>
+						</td>
+					</tr>
+					<tr>
+						<td><select class="teamSelect" name="teamName" onChange="FinalConfirm(this.selectedIndex)"></select></td>
+					</tr>
+				</table>
 			</div>
-			<div class="article">
-				<div class="input-group">
-					<span class="description">標題：&nbsp; <input type="text"
-						name="postArticle" class="form-control" id="inputTitle" />
-					</span>
-				</div>
-
-				<div class="input-group">
-					<span class="description"> <label for="">圖片：&nbsp;</label> <input
-						type="file" name="imageFile">
-					</span>
-				</div>
-
-				<div class="input-group">
-					<span class="description">內文：<div style="line-height:1vh">&nbsp;</div> <form:textarea
-							path="postContent" class="form-control" id="editor" placeholder="請輸入文章內容" />
-					</span>
-				</div>
+			<div class="boxRight">
+				<table class="tableRight">
+					<tr>
+						<td class="tdRight"><span class="description">標題：&nbsp;</span></td>
+					</tr>
+					<tr>
+						<td class="tdRight"><input type="text" name="postArticle" class="form-control" id="inputTitle" /></td>
+					</tr>
+					<tr>
+						<td class="tdRight"><label for="" class="description">圖片：&nbsp;</label><input type="file" name="imageFile"></td>
+					</tr>
+					<tr>
+						<td class="tdRight"><span class="description">內文：&nbsp;</span></td>
+					</tr>
+					<tr>
+						<td><form:textarea path="postContent" class="form-control" id="editor" placeholder="請輸入文章內容" /></td>
+					</tr>
+					
+				</table>
 			</div>
-			<div class="confirm">
-				<input class="postBtn" type="submit" name="ConfirmBtn" value="送出" DISABLED>
+			<div class="boxConfirm">
+				<br>
+				<table>
+					<tr>
+						<td><input class="postBtn" type="submit" name="submit" value="送出" DISABLED></td>
+					</tr>
+				</table>
 			</div>
 		</form:form>
 	</div>
@@ -91,9 +117,9 @@
         }
         function FinalConfirm(IDX) {
             if (IDX > 0) {
-                document.F.ConfirmBtn.disabled = false;
+                document.F.submit.disabled = false;
             } else {
-                document.F.ConfirmBtn.disabled = true;
+                document.F.submit.disabled = true;
             }
         }
         function init() {
@@ -102,12 +128,18 @@
         }
     </script>
     
-	<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script>
-	<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script>
-    <script src="${contextRoot}/js/build/ckeditor.js"></script>
+<%-- 	<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
+<%-- 	<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
+<%--     <script src="${contextRoot}/js/ckeditor5-build-classic/build/ckeditor.js"></script> --%>
+	<script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+	
 	<script>
 		ClassicEditor.create( document.querySelector( '#editor' ), {
 			// 這裡可以設定 plugin
+			plugins: [ 'Table', 'TableToolbar', 'Essentials', 'Paragraph', 'Bold', 'Italic'],
+// 			'Heading', 'Underline', 'Strikethrough'
+			toolbar: [ 'bold', 'italic', 'insertTable', 'undo', 'redo'],
+// 			'heading', '|', 'underline', 'strikethrough'
 		})
 		.then( editor => {
 			console.log( 'Editor was initialized', editor );

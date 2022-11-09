@@ -41,76 +41,91 @@
 <link href="${contextRoot}/css/index_style.css" rel="stylesheet" />
 <!-- responsive style -->
 <link href="${contextRoot}/css/responsive.css" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/104e2ed605.js"
-	crossorigin="anonymous"></script>
-<style>
-.holder{
-position: relative;
-	top: 50px;
-	left: 25%;
-}
-</style>
+<script src="https://kit.fontawesome.com/104e2ed605.js"	crossorigin="anonymous"></script>
+	
+<link href="${contextRoot}/css/team/standing.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-
-
-
 	<!-- navbar -->
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
-	<div class="holder">
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
+	<div class="content">
 		<c:forEach items="${list}" var="teamlist" varStatus="c">
-		<c:choose>
-			<c:when test="${c.count==1}"><h3>美聯東區</h3></c:when>
-			<c:when test="${c.count==2}"><h3>美聯中區</h3></c:when>
-			<c:when test="${c.count==3}"><h3>美聯西區</h3></c:when>
-			<c:when test="${c.count==4}"><h3>國聯東區</h3></c:when>
-			<c:when test="${c.count==5}"><h3>國聯中區</h3></c:when>
-			<c:when test="${c.count==6}"><h3>國聯西區</h3></c:when>
-		</c:choose>	
-			<table class="table" style="width: 1000px">
-				<thead>
-					<tr>
-						<th scope="col" width ="90px">排名</th>
-						<th scope="col" width ="150px">隊伍名稱</th>
-						<th scope="col">勝場</th>
-						<th scope="col">敗場</th>
-						<th scope="col">勝率</th>
-						<th scope="col">勝差</th>
-						<th scope="col">外卡勝差</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="team" items="${teamlist}" varStatus="s">
+			<c:choose>
+				<c:when test="${c.count==1}">
+					<div class="title">
+					<img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">
+					&nbsp;MLB 戰績 > 美聯東區</div>
+				</c:when>
+				<c:when test="${c.count==2}">
+					<div class="title">
+					<img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">
+					&nbsp;MLB 戰績 > 美聯中區</div>
+				</c:when>
+				<c:when test="${c.count==3}">
+					<div class="title">
+					<img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">
+					&nbsp;MLB 戰績 > 美聯西區</div>
+				</c:when>
+				<c:when test="${c.count==4}">
+					<div class="title">
+					<img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">
+					&nbsp;MLB 戰績 > 國聯東區</div>
+				</c:when>
+				<c:when test="${c.count==5}">
+					<div class="title">
+					<img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">
+					&nbsp;MLB 戰績 > 國聯中區</div>
+				</c:when>
+				<c:when test="${c.count==6}">
+					<div class="title">
+					<img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">
+					&nbsp;MLB 戰績 > 國聯西區</div>
+				</c:when>
+			</c:choose>	
+			<div class="cardEach">
+				<table class="table">
+					<thead>
 						<tr>
-							<th scope="row">${s.count}</th>
-							<td><img  src="${contextRoot}/showTeamImage/${team.teamId}" width="20px" ><a href="${contextRoot}/Team/showTeamInfo?id=${team.teamId}">${team.name}</a></td>
-							<td>${team.win}</td>
-							<td>${team.lose}</td>
-							<td>${team.percent}</td>
-							<td>${team.diff}</td>
-							<td>${team.wcb}</td>
+							<th scope="col" class="col1">排名</th>
+							<th scope="col" class="col2">隊伍名稱</th>
+							<th scope="col" class="col1">勝場</th>
+							<th scope="col" class="col1">敗場</th>
+							<th scope="col" class="col1">勝率</th>
+							<th scope="col" class="col1">勝差</th>
+							<th scope="col" class="col1">外卡勝差</th>
 						</tr>
-					</c:forEach>
-
-
-				</tbody>
-			</table>
-			<br>
+					</thead>
+					<tbody>
+						<c:forEach var="team" items="${teamlist}" varStatus="s">
+							<tr>
+								<th scope="row" class="col1">${s.count}</th>
+								<td class="col3">
+									<img class="teamImg" src="${contextRoot}/showTeamImage/${team.teamId}" width="100%" >
+									<a href="${contextRoot}/Team/showTeamInfo?id=${team.teamId}">
+									${team.name}</a>
+								</td>
+								<td class="col1">${team.win}</td>
+								<td class="col1">${team.lose}</td>
+								<td class="col1">${team.percent}</td>
+								<td class="col1">${team.diff}</td>
+								<td class="col1">${team.wcb}</td>
+							</tr>
+						</c:forEach>
+	
+	
+					</tbody>
+				</table>
+			</div>
 		</c:forEach>
-
-
-
-
-
-
-
-
-
-
 	</div>
+<jsp:include page="../layout/footer.jsp"></jsp:include>
 <%-- 	<a href="${contextRoot}/Team/getTeam">getStanding</a> --%>
 <%-- 	<a href="${contextRoot}/Team/updateStanding">updateStanding</a> --%>
 <%-- 	<a href="${contextRoot}/Team/getImg">getImg</a> --%>

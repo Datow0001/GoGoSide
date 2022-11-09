@@ -8,46 +8,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>TeamInfo</title>
+	<meta charset="UTF-8">
+	<title>TeamInfo</title>
+	<link href="${contextRoot}/css/team/teamInfo.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="../layout/navbar.jsp"></jsp:include>
-<div>
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
+	<div class="content">
+	<div id="title"><img id="icon" src="${contextRoot}/images/forumImages/basketball-icon.jpg" width="100%">&nbsp;NBA 球隊資訊</div>
 		<c:forEach items="${list}" var="teamlist">
-			<table class="table" style="width: 1000px">
+			<span class="cardEach">
+			<table>
 				<thead>
-					<tr>
-						
-						<th scope="col">隊伍名稱</th>
-						
+					<tr>	
+						<th scope="col" id="th">隊伍名稱</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="team" items="${teamlist}" varStatus="s">
 						<tr>
-							
-							<td><a href="${contextRoot}/Team/showNBATeamInfo?name=${team.teamName}"><img  src="${team.teamImageSrc}" height="20px" width="20px">${team.teamName}</a></td>
-							
+							<td class="teamName">
+								<img class="teamImg" src="${team.teamImageSrc}" width="100%">
+							</td>
+							<td class="teamName">
+								<a href="${contextRoot}/Team/showNBATeamInfo?name=${team.teamName}">
+								${team.teamName}</a>
+							</td>
 						</tr>
 					</c:forEach>
-
-
 				</tbody>
 			</table>
-			<br>
+			</span>
 		</c:forEach>
-
-
-
-
-
-
-
-
-
-
 	</div>
-
+	
+	<jsp:include page="../layout/footer.jsp"></jsp:include>
 </body>
 </html>

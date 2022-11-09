@@ -30,7 +30,7 @@ public class HighLightServiceImpl implements HighLightService {
 		 Date date1 = new Date();
 		 String date = sdf.format(date1);
 	
-//		String date="10/29/22"; 
+//		String date="10/23/22"; 
 		
 		 driver.get("https://www.youtube.com/playlist?list=PLL-lmlkrmJanUePyXyLusrJGzyGRg-Qj3");
 		 try {
@@ -61,7 +61,7 @@ public class HighLightServiceImpl implements HighLightService {
 
 	}
 	public List<HighLight> findHL(){
-		return hlDao.findTop3ByOrderByHighLightIdDesc();
+		return hlDao.findTop7ByOrderByHighLightIdDesc();
 	}
 
 }

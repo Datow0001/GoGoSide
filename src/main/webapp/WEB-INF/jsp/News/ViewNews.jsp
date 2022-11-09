@@ -10,16 +10,68 @@
 <head>
 <meta charset="UTF-8">
 <title>ViewNews</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+
+<link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png"
+	type="">
+<title>GoGoSide</title>
+
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css"
+	href="${contextRoot}/css/bootstrap.css" />
+<!--owl slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<!-- nice select  -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+	integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+	crossorigin="anonymous" />
+<!-- font awesome style -->
+<link href="${contextRoot}/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="${contextRoot}/css/index_style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="${contextRoot}/css/responsive.css" rel="stylesheet" />
 <style>
 .container {
 	display: flex;
 	justify-content: space-around;
 }
+
+.wrapper {
+	width: 100%;
+}
+
+.main-content {
+	min-height: 100%;
+	padding-top: 8px;
+	padding-bottom: 50px;
+}
+
+.footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
 </style>
 
 </head>
 <body>
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
+	<div id="navvv">
+		<header class="header">
+			<jsp:include page="../layout/navbar.jsp"></jsp:include>
+		</header>
+	</div>
 
 
 	<div class="container">
@@ -87,15 +139,15 @@
 				<%-- 					</c:choose> --%>
 				<%-- 				</c:forEach> --%>
 
-<%-- 				<a href="${contextRoot}/getNews">getTodayNews</a> --%>
-<%-- 				<a href="${contextRoot}/getNBAnews">getTodayNewsNBA</a> --%>
-<%-- 				<a href="${contextRoot}/getHighLight">gethighLight</a> --%>
-<%-- 				<a href="${contextRoot}/News/searchNBA">seeNBA</a> --%>
-				
-				<form action="${contextRoot}/News/search" method="get">
-					<textarea name="word" class="form-control"></textarea>
-					<input type="submit" name="submit" value="送出">
-				</form>
+				<%-- 				<a href="${contextRoot}/getNews">getTodayNews</a> --%>
+				<%-- 				<a href="${contextRoot}/getNBAnews">getTodayNewsNBA</a> --%>
+				<%-- 				<a href="${contextRoot}/getHighLight">gethighLight</a> --%>
+				<%-- 				<a href="${contextRoot}/News/searchNBA">seeNBA</a> --%>
+
+				<%-- 				<form action="${contextRoot}/News/search" method="get"> --%>
+				<!-- 					<textarea name="word" class="form-control"></textarea> -->
+				<!-- 					<input type="submit" name="submit" value="送出"> -->
+				<%-- 				</form> --%>
 				<!-- 			========================================================= -->
 
 			</div>
@@ -123,7 +175,12 @@
 
 
 	</div>
-
+	<jsp:include page="../layout/footer.jsp"></jsp:include>
 
 </body>
+<!-- jQery -->
+<%-- 		<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
+<!-- bootstrap js -->
+<%-- 		<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
+
 </html>

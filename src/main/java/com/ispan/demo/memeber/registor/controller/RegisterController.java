@@ -51,7 +51,7 @@ public class RegisterController {
 		mService.save(member);
 		System.out.println("儲存" + member);
 		model.addAttribute("login", member);
-		return "member/login";
+		return "redirect:/member/loginForm";
 
 	}
 

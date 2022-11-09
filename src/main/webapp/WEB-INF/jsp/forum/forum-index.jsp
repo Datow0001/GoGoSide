@@ -18,37 +18,24 @@
 <title>討論區</title>
 
 </head>
-<body>
-	<jsp:include page="../layout/navbar.jsp"></jsp:include>
+<body onload="changeTag();">
+	<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 	<div>
 
 		<div class="content">
 			<aside class="asideLeft">
 				<table>
 					<tr>
-						<td class=eachBtn id="this">當前位置<br>{XXX看板}</td>
+						<td class=eachBtn id="this">當前位置<br>> MLB&nbsp;&nbsp;</td>
 					</tr>
 					<tr>
-						<td class=eachBtn><a href="">所有看板</a></td>
+						<td class=eachBtn><a href="">NBA</a></td>
 					</tr>
-					<tr>
-						<td class=eachBtn><a href="">{XXX看板}</a></td>
-					</tr>
-					<tr>
-						<td class=eachBtn><a href="">{XXX看板}</a></td>
-					</tr>
-					<tr>
-						<td class=eachBtn><a href="">{XXX看板}</a></td>
-					</tr>
-					<tr>
-						<td class=eachBtn><a href="">{XXX看板}</a></td>
-					</tr>
-					<tr>
-						<td class=eachBtn><a href="">{XXX看板}</a></td>
-					</tr>
-					<tr>
-						<td class=eachBtn><a href="">{XXX看板}</a></td>
-					</tr>
+
 				</table>
 			</aside>
 
@@ -63,25 +50,23 @@
 			<article class="article">
 				<c:forEach var="forumPost" items="${page.content}">
 					<div class="card">
-						<a href="${contextRoot}/forum/post?p=${forumPost.postNo}" style="text-decoration: none">
+						<a href="${contextRoot}/forum/ViewEachPost?p=${forumPost.postNo}" style="text-decoration: none">
 						
 							<table class="tablePost">
 								<tr>
 									<td class="userImg" rowspan="2">
-										<img class="userIcon" src="${contextRoot}/images/forumImages/user_baseball.jpg">
+										<img class="userIcon" src="${contextRoot}/PostUserImage/${forumPost.userId}">
 									</td>
 									<td class="userName" colspan="2">
 										<div class="userName">
-											${forumPost.teamName}隊版．{使用者暱稱}
+											${forumPost.teamName}隊版．${forumPost.userId}
 										</div>
-<%-- 										<form:input type="hidden" value="${forumPost.postNo}" path="postNo" class="form-control" /> --%>
 									</td>
 									<td class="edit" rowspan="2">
-<%-- 										<a href="${contextRoot}/forum/edit?postNo=${forumPost.postNo}">修改</a> --%>
-										<a href="">修改</a>
-										｜
-										<a onclick="return confirm('確定刪除？')"
-										   href="${contextRoot}/forum/delete?p=${forumPost.postNo}">刪除</a>
+<%-- 										<a href="${contextRoot}/forum/edit?p=${forumPost.postNo}">修改</a> --%>
+<!-- 										｜ -->
+<!-- 										<a onclick="return confirm('確定刪除？')" -->
+<%-- 										   href="${contextRoot}/forum/delete?p=${forumPost.postNo}">刪除</a> --%>
 									</td>
 									<td class="forumImg" rowspan="4">
 										<img class="forumIcon" src="${contextRoot}/showImage/${forumPost.postNo}" height="100%" width="100%">
@@ -104,14 +89,14 @@
 									</td>
 								</tr>
 							</table>
-							<table>
+							<table class="status">
 								<tr>
-									<td class="countsIcon"><img src="${contextRoot}/images/forumImages/ball-icon.png" height="100%"></td>
-									<td class="countsNo">${forumPost.postLikes}</td>
-									<td class="countsIcon"><img src="${contextRoot}/images/forumImages/ball-icon.png" height="100%"></td>
-									<td class="countsNo">${forumPost.postDislikes}</td>
-									<td class="countsIcon"><img src="${contextRoot}/images/forumImages/ball-icon.png" height="100%"></td>
-									<td class="countsNo">${forumPost.postViews}</td>
+									<td class="countsIcon"><img src="${contextRoot}/images/forumImages/like-icon.png" height="100%">&nbsp;</td>
+									<td class="countsNo">&nbsp;${forumPost.postLikes}</td>
+									<td class="countsIcon"><img src="${contextRoot}/images/forumImages/comment-icon.png" height="100%">&nbsp;</td>
+									<td class="countsNo">&nbsp;${forumPost.postDislikes}</td>
+									<td class="countsIcon"><img src="${contextRoot}/images/forumImages/view-icon.png" height="100%">&nbsp;</td>
+									<td class="countsNo">&nbsp;${forumPost.postViews}&nbsp;views</td>
 									<td class="space">&nbsp;</td>
 								</tr>
 							</table>
@@ -142,7 +127,14 @@
 	<br>
 	<jsp:include page="../layout/footer.jsp"></jsp:include>
 	
-	<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script>
-    <script src="${contextRoot}/js/bootstrap.bundle.min.js"></script>
+<%-- 	<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
+<%--     <script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
+    
+    <script>
+	    function changeTag(){
+	        var tagH2 = document.getElementsByTagName("h2");
+	        tagH2.outerHTML = "<p>" + tagH2.innerHTML + "</p>";
+	    }
+    </script>
 </body>
 </html>

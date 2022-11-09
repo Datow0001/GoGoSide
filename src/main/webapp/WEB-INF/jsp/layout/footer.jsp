@@ -69,8 +69,8 @@
 
             </body>
             <!-- jQery -->
-            <script src="${contextRoot}/js/jquery-3.6.1.min.js"></script>
+<%--             <script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
             <!-- bootstrap js -->
-            <script src="${contextRoot}/js/bootstrap.bundle.min.js"></script>
+<%--             <script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
 
         </html>

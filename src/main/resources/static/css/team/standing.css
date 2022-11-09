@@ -1,0 +1,80 @@
+@font-face {
+	src: url(../../fonts/jf-openhuninn-1.1.ttf);
+	font-family: font1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.content {
+	width: 85%;
+	overflow: auto;
+	margin-left: 8%;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cardEach {
+	height: auto;
+	width: 84vw;
+	margin: 0.5%;
+	padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+	
+	border: #F5AF4B solid 3px;
+	border-radius: 3%;
+	color: #0A324B;
+	
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.2vw;
+}
+
+.cardEach a:hover, a:link, a:visited {
+	color: #0A324B;
+	text-decoration: none;
+}
+
+.title{
+	font-size: 1.6vw;
+	font-weight: bold;
+	color: #D73C28;
+	line-height: 4vw;
+	margin-top: 2.5%;
+}
+
+#icon{
+	height: 2.5vw;
+	width: auto;
+	margin-bottom: 0.5vw;
+}
+
+.col1{
+	width: 2vw;
+	text-align: center;
+}
+
+.col2{
+	width: 5vw;
+	text-align: center;
+}
+
+.col3{
+	width: 5vw;
+	text-align: left;
+}
+
+.col4{
+	width: 4vw;
+	text-align: center;
+}
+
+.teamImg{
+	width: 2vw;
+	height: auto;
+	margin-right: 0.5vw;
+}
