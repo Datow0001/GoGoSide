@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png" type="">
 	<meta charset="UTF-8">
-	<title>TeamInfo</title>
+	<title>NBA球隊資訊</title>
 	<link href="${contextRoot}/css/team/teamInfo.css" rel="stylesheet">
 </head>
 <body>
@@ -25,7 +26,17 @@
 			<table>
 				<thead>
 					<tr>	
-						<th scope="col" id="th">隊伍名稱</th>
+						<th scope="col" id="th">
+						<c:forEach items="${teamlist}" var="team" begin="0" end="0">
+						<c:choose>
+						<c:when test="${team.teamDiv=='EAST'}">
+						東區
+						</c:when>
+						<c:when test="${team.teamDiv=='WEST'}">
+						西區
+						</c:when>
+						</c:choose>
+						</c:forEach></th>
 					</tr>
 				</thead>
 				<tbody>

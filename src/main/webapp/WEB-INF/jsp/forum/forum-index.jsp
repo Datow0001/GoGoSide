@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+<link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png" type="">
 <link href="${contextRoot}/css/forum/forum-index.css" rel="stylesheet">
 <title>討論區</title>
 
@@ -31,12 +31,74 @@
 				<table>
 					<tr>
 						<td class=eachBtn id="this">當前位置<br>> MLB&nbsp;&nbsp;</td>
+						
 					</tr>
 					<tr>
 						<td class=eachBtn><a href="">NBA</a></td>
 					</tr>
 
 				</table>
+				<a href="${contextRoot}/forum/orderbyteam?team=紐約洋基">紐約洋基</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=波士頓紅襪">波士頓紅襪</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=巴爾的摩金鶯">巴爾的摩金鶯</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=坦帕灣光芒">坦帕灣光芒</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=多倫多藍鳥">多倫多藍鳥</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=芝加哥白襪">芝加哥白襪</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=克里夫蘭守護者">克里夫蘭守護者</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=底特律老虎">底特律老虎</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=堪薩斯市皇家">堪薩斯市皇家</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=明尼蘇達雙城">明尼蘇達雙城</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=休士頓太空人">休士頓太空人</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=洛杉磯天使">洛杉磯天使</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=奧克蘭運動家">奧克蘭運動家</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=西雅圖水手">西雅圖水手</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=德克薩斯遊騎兵">德克薩斯遊騎兵</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=華盛頓國民">華盛頓國民</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=費城費城人">費城費城人</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=紐約大都會">紐約大都會</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=邁阿密馬林魚">邁阿密馬林魚</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=亞特蘭大勇士">亞特蘭大勇士</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=芝加哥小熊">芝加哥小熊</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=辛辛那提紅人">辛辛那提紅人</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=密爾瓦基釀酒人">密爾瓦基釀酒人</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=匹茲堡海盜">匹茲堡海盜</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=聖路易紅雀">聖路易紅雀</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=亞利桑那響尾蛇">亞利桑那響尾蛇</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=科羅拉多洛磯">科羅拉多洛磯</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=洛杉磯道奇">洛杉磯道奇</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=聖地牙哥教士">聖地牙哥教士</a>
+				<br>
+				<a href="${contextRoot}/forum/orderbyteam?team=舊金山巨人">舊金山巨人</a>
+				<br>
+				
 			</aside>
 
 			<aside class="asideRight">

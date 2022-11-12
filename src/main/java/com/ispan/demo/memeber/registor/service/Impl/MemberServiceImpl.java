@@ -105,6 +105,19 @@ public class MemberServiceImpl implements MemberService {
 	public void insert(Member member) {
 		mRepository.save(member);
 	}
+
+
+	@Override
+	public Member findByPersonId(String id) {
+		Optional<Member> member = mRepository.findByPersonId(id);
+		if(member.isPresent()) {
+			return member.get();
+		}else {
+			return null;
+			
+		}
+		
+	}
 	
 	
 

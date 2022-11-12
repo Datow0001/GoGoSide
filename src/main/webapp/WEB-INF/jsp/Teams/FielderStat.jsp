@@ -21,7 +21,7 @@
 	href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 <link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png"
 	type="">
-<title>Standing</title>
+<title>MLB野手數據</title>
 
 
 <!-- bootstrap core css -->

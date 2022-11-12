@@ -127,6 +127,7 @@
 													</div>
 												</div>
 											</div>
+											<form:input type="hidden" path="roles" value="${member.roles}" />
 											<!-- 身分證 -->
 											<div class="form-group">
 												<div class="input-icon">

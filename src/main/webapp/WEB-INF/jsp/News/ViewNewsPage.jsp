@@ -10,7 +10,8 @@
 
 <head>
 <meta charset="UTF-8">
-<title>ViewNewsPage</title>
+<link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png" type="">
+<title>${News.newsTitle}</title>
 <style type="text/css">
 .news {
 	width: 800px;
@@ -207,7 +208,9 @@
 									src="${contextRoot}/PostUserImage/${workMessage.userId}">
 								</td>
 								<td class="userName" colspan="2">
-									<div class="userName">${workMessage.userId}</div>
+									<div class="userName">
+									<a href="${contextRoot}/viewUserInfo?userId=${workMessage.userId}">${workMessage.userId}</a>
+									</div>
 								</td>
 								<c:if test="${!empty IsAdmin}">
 									<td class="edit" rowspan="2"><a

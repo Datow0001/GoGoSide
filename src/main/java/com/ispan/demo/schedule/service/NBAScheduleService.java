@@ -77,9 +77,22 @@ public class NBAScheduleService {
 
 		for (int x = 0; x < str2.length; x++) {
 			NBASchedule sch = new NBASchedule();
+			
+			
+			
+			
+			
+			
 			sch.setPoint(str2[x]);
-			sch.setNhomeTeam(home.get(x));
-			sch.setNawayTeam(away.get(x));
+//			sch.setNhomeTeam(home.get(x));
+//			sch.setNawayTeam(away.get(x));
+			if(x<home.size()) {
+				sch.setNhomeTeam(home.get(x));
+				
+			}
+			if(x<away.size()) {
+				sch.setNawayTeam(away.get(x));
+			}
 			String da = Integer.toString(date);
 			Date gameDate;
 			try {
@@ -98,7 +111,24 @@ public class NBAScheduleService {
 	}
 
 	public void getbymonth() {
-		for (int i = 20221109; i <= 20221123; i++) {
+		for (int i = 20221101; i <= 20221130; i++) {
+			get(i);
+		}
+		for (int i = 20221201; i <= 20221231; i++) {
+			get(i);
+		}
+		for (int i = 20230101; i <= 20230131; i++) {
+			get(i);		}
+		for (int i = 20230201; i <= 20230228; i++) {
+			get(i);
+		}
+		for (int i = 20230301; i <= 20230331; i++) {
+			get(i);
+		}
+		for (int i = 20230401; i <= 20230430; i++) {
+			get(i);
+		}
+		for (int i = 20230501; i <= 20230531; i++) {
 			get(i);
 		}
 	}

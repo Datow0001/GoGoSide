@@ -39,49 +39,41 @@
 
         <body>
             <div id="test1109" style="position:relative ;height: 30rem;">
+                <div class="tit">
+                    <h1 style="
+                    margin-right: 300px;
+                    margin-left: 280px;">精彩重播</h1>
+                </div>
+
+
                 <div class="reel">
-
-
-                    <!-- 輪播牆 -->
-                       
-                    <div class="carousel">
-                        <div class="wrap">
-                            <ul>   
-                                 <li><a href="${hl0.highLightHref}"><img src="${url0}" /></a> 
-                                </li>
-                                <li> <a href="${hl1.highLightHref}"><img src="${url1}" /></a> 
-                                </li>
-                                <li><a href="${hl2.highLightHref}"> <img src="${url2}" /></a> 
-                                </li>
-                                <li><a href="${hl3.highLightHref}"> <img src="${url3}" /></a> 
-                                </li>
-                                <li><a href="${hl4.highLightHref}"> <img src="${url4}" /></a> 
-                                </li>
-                                <li><a href="${hl5.highLightHref}"> <img src="${url5}" /></a> 
-                                </li>
-                                <li><a href="${hl6.highLightHref}"> <img src="${url6}" /></a> 
-                                </li>
-                            </ul>
+                    <div class="mid">
+                        <!-- 輪播牆 -->
+                        <div class="sco">
+                            <div class="carousel">
+                                <div class="wrap">
+                                    <ul>
+                                        <li><a href="${hl0.highLightHref}"><img class="imgg" src="${url0}" />
+                                            </a>
+                                        </li>
+                                        <li> <a href="${hl1.highLightHref}"><img class="imgg" src="${url1}" /></a>
+                                        </li>
+                                        <li><a href="${hl2.highLightHref}"> <img class="imgg" src="${url2}" /></a>
+                                        </li>
+                                        <li><a href="${hl3.highLightHref}"> <img class="imgg" src="${url3}" /></a>
+                                        </li>
+                                        <li><a href="${hl4.highLightHref}"> <img class="imgg" src="${url4}" /></a>
+                                        </li>
+                                        <li><a href="${hl5.highLightHref}"> <img class="imgg" src="${url5}" /></a>
+                                        </li>
+                                        <li><a href="${hl6.highLightHref}"> <img class="imgg" src="${url6}" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <!-- 新聞 -->
 
                     </div>
-                    <div>
-                    <h3>熱門新聞</h3>
-                        <ul style=" border:red solid 2px">
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news0.newsNumber}">${news0.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news1.newsNumber}">${news1.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news2.newsNumber}">${news2.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news3.newsNumber}">${news3.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news4.newsNumber}">${news4.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news5.newsNumber}">${news5.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news6.newsNumber}">${news6.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news7.newsNumber}">${news7.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news8.newsNumber}">${news8.newsTitle}</a></li>
-                            <li><a href="${contextRoot}/News/ViewNewsPage?id=${news9.newsNumber}">${news9.newsTitle}</a></li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
             <script>
@@ -220,8 +212,10 @@
 
         <!-- jQery -->
         <!-- jQery -->
-<%--         <script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
-<!--         bootstrap js -->
-<%--         <script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
+        <%-- <script src="${contextRoot}/js/jquery-3.6.1.min.js">
+            </script> --%>
+            <!--         bootstrap js -->
+            <%-- <script src="${contextRoot}/js/bootstrap.bundle.min.js">
+                </script> --%>
 
         </html>

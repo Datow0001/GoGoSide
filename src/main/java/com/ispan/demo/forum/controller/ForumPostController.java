@@ -55,6 +55,16 @@ public class ForumPostController {
 		return "/forum/forum-index";
 	}
 	
+	@GetMapping("/forum/orderbyteam")
+	public String searchTeamForum(@RequestParam(name="team")String teamName,@RequestParam(name = "p", defaultValue = "1") Integer pageNumber, Model model) {
+
+		Page<ForumPost> page = fService.findByTeamName(teamName,pageNumber);
+		model.addAttribute("page", page);
+		
+		return "/forum/forum-index";
+	}
+	
+	
 	@GetMapping("/forum/ViewEachPost")
 	public String viewForumPage(@RequestParam(name = "p", defaultValue = "1") Integer pageNumber, Model model) {
 		ForumPost post = fService.findById(pageNumber);

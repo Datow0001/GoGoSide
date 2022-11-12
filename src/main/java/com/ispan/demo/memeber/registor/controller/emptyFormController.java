@@ -1,20 +1,18 @@
 package com.ispan.demo.memeber.registor.controller;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ispan.demo.forum.model.ForumPost;
+import com.ispan.demo.forum.service.ForumPostService;
 import com.ispan.demo.memeber.login.model.Login;
 import com.ispan.demo.memeber.registor.model.member.Member;
 import com.ispan.demo.memeber.registor.service.MemberService;
@@ -33,7 +32,9 @@ public class emptyFormController {
 
     @Autowired
     MemberService mService;
-
+    @Autowired
+    ForumPostService fps;
+    
     // 首頁畫面
 //    @GetMapping("/")
 //    public String home() {
@@ -79,6 +80,7 @@ public class emptyFormController {
     	mService.insert(member);
     	return "redirect:/";
     }
+    
     @GetMapping("/showUserImage")
 	public ResponseEntity<byte[]> showImage(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
@@ -103,6 +105,17 @@ public class emptyFormController {
 
 		return new ResponseEntity<byte[]>(file, headers, HttpStatus.OK);
 	}
+	
+	@GetMapping("/viewUserInfo")
+	public String viewInfo(@RequestParam(name="userId")String userId,@RequestParam(name="p", defaultValue = "1")Integer p,Model model) {
+		Member member = mService.findByUserId(userId);
+		System.out.println(p+"saddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+		Page<ForumPost> fp= fps.findByuserId(userId,p);
+		model.addAttribute("member",member);
+		model.addAttribute("page",fp);
+		return"member/userInfo";
+	}
+	
 	
     
 }

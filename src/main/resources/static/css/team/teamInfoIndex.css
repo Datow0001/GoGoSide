@@ -1,0 +1,143 @@
+@font-face {
+	src: url(../../fonts/jf-openhuninn-1.1.ttf);
+	font-family: font1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.content {
+	width: 95%;
+	overflow: auto;
+	margin-left: 2%;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cardEach {
+	height: auto;
+	width: 95vw;
+	margin: 2% 2% 2% 2%;
+	padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+	
+	border: #F5AF4B solid 3px;
+	border-radius: 3%;
+	color: #0A324B;
+	
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.2vw;
+}
+
+.cardLeft {
+	height: 20vh;
+	width: 25vw;
+	margin-left: 2%;
+	padding: 1.5vh 1.5vw 1.5vh 1vw;
+	float: left;
+	
+	color: #0A324B;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+.cardRight {
+	height: 20vh;
+	width: 65vw;
+	margin-right: 2%;
+	padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+	float: right;
+	
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.2vw;
+}
+
+.cardTop {
+	height: 20vh;
+	width: 85vw;
+	margin-right: 2%;
+	padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+	float: right;
+	
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.2vw;
+}
+
+.cardEach a:hover, a:link, a:visited {
+	color: #0A324B;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	text-decoration: none;
+}
+
+#cardNews{
+	height: 30vh;
+	width: 80vw;
+	margin-left: 5%;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cardStat {
+	height: auto;
+	width: 93vw;
+	margin-left: 2%;
+	padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+	
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.2vw;
+	overflow-x: scroll;
+}
+
+#newsImg{
+	height: 25vh;
+	margin: 4%;
+}
+
+.title{
+	font-size: 2.5vw;
+	font-weight: bold;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	color: #D73C28;
+	line-height: 5vw;
+	margin-left: 4vw;
+}
+
+.secondTitle{
+	font-size: 1.8vw;
+	font-weight: bold;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	color: #0A324B;;
+	line-height: 3vw;
+	margin-left: 2vw;
+}
+
+.icon{
+	height: 2.5vw;
+	width: auto;
+	margin-bottom: 0.5vw;
+}
+
+.teamInfo{
+	width: 60vw;
+	font-size: 1.4vw;
+	line-height: 3vw;
+	text-align: center;
+}
+
+.teamInfo th, td{
+	border: 3px lightgray solid;
+}
+
+.tableLeft th, td{
+	border: none;
+}
+
+.teamImg{
+	width: 5.5vw;
+	height: auto;
+}

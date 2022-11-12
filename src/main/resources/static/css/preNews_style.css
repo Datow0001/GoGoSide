@@ -1,90 +1,90 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Roboto+Condensed:wght@700&display=swap");
+.con {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0 70px;
+}
+
 #test002 {
   /* slider section */
 }
 #test002 .slider_section {
-  margin: 0 4% 2% 4%;
-  padding: 2% 4%;
+  margin-right: 2%;
+  width: 120%;
+  padding: 10px 30px;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto Condensed", sans-serif;
   text-align: justify;
-  justify-content: flex-start;
+  align-content: center;
   background-color: #0A324B;
   border-radius: 50px;
+  width: 70%;
 }
-#test002 .slider_section .tit {
+#test002 .tit {
   color: rgba(255, 255, 255, 0.8941176471);
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+  letter-spacing: 8px;
+  justify-content: center;
+  margin-bottom: 1px;
 }
-#test002 .slider_section .tit span {
+#test002 span {
   padding: 0px;
   margin-left: 2%;
-  font-size: 2rem;
+  font-size: 1.2rem;
   display: flex;
   font-weight: 500;
   text-align: center;
   align-items: center;
   letter-spacing: 2px;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
-#test002 .slider_section .tit .filters_menu {
+#test002 .filters_menu {
   display: flex;
   justify-content: center;
   list-style-type: none;
   border: none;
 }
-#test002 .slider_section .tit .filters_menu li {
+#test002 .filters_menu li {
   padding: 7px 20px;
   margin-right: 1%;
   cursor: pointer;
-  border-radius: 25px;
   color: rgba(255, 255, 255, 0.8941176471);
   font-weight: 350;
   background-color: #F5AF4B;
-  font-size: 1rem;
-  margin-bottom: 8px;
+  font-size: 13px;
 }
-#test002 .slider_section .tit .filters_menu li.active {
+#test002 .filters_menu li.active {
   background-color: #F5AF4B;
   color: #0A324B;
 }
-#test002 .slider_section .tit .filters_menu li:hover {
+#test002 .filters_menu li:hover {
   color: #0A324B;
   text-decoration: none;
   transition: all 0.3s;
 }
-#test002 .slider_section .row {
+#test002 .row1 {
   align-items: center;
   align-items: flex-start;
-  margin-top: 1%;
 }
-#test002 .slider_section .row #customCarousel1 {
+#test002 #customCarousel1 {
   width: 100%;
   position: unset;
 }
-#test002 .slider_section .row .detail-box {
+#test002 .detail-box {
   color: rgba(255, 255, 255, 0.8941176471);
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   vertical-align: middle;
   padding: 1.4%;
 }
-#test002 .slider_section .row .detail-box h3 {
-  font-size: 2.2rem;
-  font-weight: bold;
-}
-#test002 .slider_section .row .detail-box p {
-  font-size: 18px;
-  letter-spacing: 2px;
-}
-#test002 .slider_section .row .detail-box .btn1:hover {
-  color: rgba(255, 255, 255, 0.8941176471);
-  text-decoration: none;
-}
-#test002 .slider_section .row .detail-box a {
+#test002 .prNewsa {
   display: inline-block;
   padding: 10px 45px;
   background-color: #F5AF4B;
@@ -92,39 +92,86 @@
   border-radius: 45px;
   transition: all 0.3s;
   border: none;
+  margin-bottom: 20px;
 }
-#test002 .slider_section .row .detail-box a:hover {
+#test002 .prNewsa:hover {
   background-color: #e78d0d;
 }
-#test002 .slider_section .row .slp {
-  position: relative;
-  overflow: auto;
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  height: 100%;
-  border-radius: 10px;
+#test002 .prNewsa.active {
+  background-color: #F5AF4B;
+  color: #0A324B;
 }
-#test002 .slider_section .carousel-indicators {
-  position: relative;
+#test002 .prNewsa:hover {
+  color: rgba(255, 255, 255, 0.8941176471);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+#test002 h3 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#test002 p {
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  font-weight: 100;
+  /* margin-top: 18px; */
+  /* margin-bottom: 30px; */
+  margin-left: 25px;
+}
+#test002 .btn1:hover {
+  color: rgba(255, 255, 255, 0.8941176471);
+  text-decoration: none;
+}
+#test002 .carousel-indicators {
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-top: 38%;
+  position: relative;
+  width: auto;
 }
-#test002 .slider_section .carousel-indicators li {
+#test002 li {
   background-color: #F5AF4B;
   width: 12px;
   height: 12px;
   border-radius: 100%;
   opacity: 1;
 }
-#test002 .slider_section .carousel-indicators li.active {
+#test002 li.active {
   width: 20px;
   height: 20px;
   background-color: #F5AF4B;
+}
+
+#aa {
+  justify-content: center;
+}
+#aa span {
+  margin-top: 13px;
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #F5AF4B;
+  color: rgba(255, 255, 255, 0.8941176471);
+  border-radius: 45px;
+  /* transition: all 0.3s; */
+  border: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  /* font-size: 22px; */
+  font-weight: 200;
+  letter-spacing: 8px;
+  margin: 0;
+}
+#aa a {
+  display: inline-block;
+  text-decoration: none;
+  text-align: justify;
+  color: #0A324B;
+  line-height: 2;
+}
+#aa a:hover {
+  text-decoration: none;
+  color: #F5AF4B;
+  transition: all 0.3s;
 }/*# sourceMappingURL=preNews_style.css.map */

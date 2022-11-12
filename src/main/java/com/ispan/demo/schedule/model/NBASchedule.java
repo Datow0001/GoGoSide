@@ -32,17 +32,33 @@ public class NBASchedule {
 	
 	@JsonFormat(pattern = "yyyyMMdd", timezone = "GMT+8")
 	@DateTimeFormat(pattern = "yyyyMMdd")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="gameDate")
 	private Date gameDate;
 	
 	@Column(name="point")
 	private String point;
 	
-	@Column(name="img")
-	private byte[] img;
+	@Column(name="homeimg")
+	private String homeImg;
 
-	
+	public String getHomeImg() {
+		return homeImg;
+	}
+
+	public void setHomeImg(String homeImg) {
+		this.homeImg = homeImg;
+	}
+
+	public String getAwayImg() {
+		return awayImg;
+	}
+
+	public void setAwayImg(String awayImg) {
+		this.awayImg = awayImg;
+	}
+
+	private String awayImg;
 
 	public Integer getNid() {
 		return nid;
@@ -84,13 +100,7 @@ public class NBASchedule {
 		this.point = point;
 	}
 
-	public byte[] getImg() {
-		return img;
-	}
-
-	public void setImg(byte[] img) {
-		this.img = img;
-	}
+	
 	
 	public NBASchedule() {
 		

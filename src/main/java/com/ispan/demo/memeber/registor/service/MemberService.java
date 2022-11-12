@@ -26,6 +26,7 @@ public interface MemberService {
 	
 	void insert(Member member);
 	
+	Member findByPersonId(String id);
 //	Member getMemberByMail(String mail);
 	
 }

@@ -132,7 +132,7 @@
 							<a class="dropdown-item" href="${contextRoot}/Team/NBAstand">NBA戰績</a>							
 							<a class="dropdown-item" href="${contextRoot}/Schedule">MLB賽程</a>
 							<a class="dropdown-item" href="${contextRoot}/NBASchedule">NBA賽程</a>
-							<a class="nav-link" href="${contextRoot}/WatchScore">GetDayScore</a>
+							<a class="dropdown-item" href="${contextRoot}/WatchScore">MLB比賽結果</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" role="button"

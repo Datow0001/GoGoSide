@@ -16,5 +16,7 @@ public interface ForumPostService {
 	List<ForumPost> findMostViews();
 	List<ForumPost> findLastThree();
 	Page<ForumPost> findBySearch(String word);
+	Page<ForumPost> findByuserId(String userId,Integer pageNumber);
+	Page<ForumPost> findByTeamName(String teamName,Integer pageNumber);
 	
 }

@@ -35,7 +35,7 @@ public class RegisterController {
 			result.rejectValue("userId", "", "信箱重複，請重新輸入");
 		}
 		if (mService.existsByPhone(member.getPhone()) == true) {
-			result.rejectValue("userId", "", "信箱重複，請重新輸入");
+			result.rejectValue("userId", "", "電話重複，請重新輸入");
 		}
 //	錯誤訊息顯示
 		if (result.getFieldErrorCount() > 0) {

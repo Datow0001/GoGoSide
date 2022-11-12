@@ -13,7 +13,11 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"> 
 </head>
 <body>
-<jsp:include page="../layout/navbar.jsp"></jsp:include>
+<div id="navvv">
+					<header class="header">
+						<jsp:include page="../layout/navbar.jsp"></jsp:include>
+					</header>
+				</div>
 <div class="container">
 <table id="table_id" class="display">
     <thead>
@@ -30,7 +34,7 @@
 <script type="text/javascript">
 $(document).ready( function () {
     $('#table_id').DataTable({
-    	"ajax":'http://localhost:8081/my-app/ShowAllScore',
+    	"ajax":'http://localhost:8080/my-app/ShowAllScore',
     	"columns":[
     		{data:'scoreid',title:'編號',},
     		{data:'gameid',title:'比賽場次',},

@@ -9,9 +9,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TeamInfo</title>
+<title>MLB球隊資訊</title>
 <link href="${contextRoot}/css/team/teamInfo.css" rel="stylesheet">
-
+<link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png" type="">
 </head>
 <body>
 <div id="navvv">
@@ -23,10 +23,32 @@
 		<div id="title"><img id="icon" src="${contextRoot}/images/forumImages/baseball-icon.jpg" width="100%">&nbsp;MLB 球隊資訊</div>
 		<c:forEach items="${list}" var="teamlist">
 			<span class="cardEach">
+				
 					<table>
 						<thead>
 							<tr>
-								<th scope="col" id="th">隊伍名稱</th>
+								<th scope="col" id="th"><c:forEach items="${teamlist}" var="team" begin="0" end="0">
+								<c:choose>
+								<c:when test="${team.place=='AL East'}">
+								美聯東區
+								</c:when>
+								<c:when test="${team.place=='AL West'}">
+								美聯西區
+								</c:when>
+								<c:when test="${team.place=='AL Central'}">
+								美聯中區
+								</c:when>
+								<c:when test="${team.place=='NL East'}">
+								國聯東區
+								</c:when>
+								<c:when test="${team.place=='NL West'}">
+								國聯西區
+								</c:when>
+								<c:when test="${team.place=='NL Central'}">
+								國聯中區
+								</c:when>
+								</c:choose>
+								</c:forEach></th>
 							</tr>
 						</thead>
 	

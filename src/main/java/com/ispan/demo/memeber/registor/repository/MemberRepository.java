@@ -15,6 +15,7 @@ public interface MemberRepository extends JpaRepository<Member, String> {
     
     Optional<Member> findUserByMail(String mail);
     
+    Optional<Member> findByPersonId(String string);
     
 //    @Query(value = "from Member where userId = :userId")
 //    Member findByUserId(String userId);

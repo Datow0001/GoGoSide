@@ -20,7 +20,7 @@
 
 <link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png"
 	type="">
-<title>Standing</title>
+<title>NBA戰績</title>
 
 
 <!-- bootstrap core css -->

@@ -10,68 +10,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Team</title>
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-<style>
-.nameAndStanding {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-.nameAndStanding h1{
-position: relative;
-left:25px;
-}
-
-.standing {
-	position: relative;
-	top: 75px;
-	right:175px;
-	
-}
-
-.container {
-	position: relative;
-	top: 50px;
-	right: 185px;
-}
-.container h2{
-	position: relative;
-	left: 25%;
-}
-.container hr{
-	width:1000px;
-	position: relative;
-	left: 205px;
-}
-
-.newsholder {
-	position: relative;
-	width:1000px;
-	top: 50px;
-	left:25%;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+<link href="${contextRoot}/css/team/teamInfoIndex.css" rel="stylesheet">
 </head>
 <body>
 	<div id="navvv">
-					<header class="header">
-						<jsp:include page="../layout/navbar.jsp"></jsp:include>
-					</header>
-				</div>
+		<header class="header">
+			<jsp:include page="../layout/navbar.jsp"></jsp:include>
+		</header>
+	</div>
 	<div>
-		<div class="nameAndStanding">
-			<img src="${team.teamImageSrc}" height="200px" >
-				<h1>${fullname}</h1><br>
-			<div class="standing">
-				<h2>本季戰績</h2>
-				<hr>
-				<table class="table" style="width: 1000px;">
+		<div class="content">
+			<div class="cardLeft">
+				<table class="tableLeft">
+					<tr>
+						<td rowspan="2"><img class="teamImg" src="${team.teamImageSrc}" height="100%" ></td>
+						<td><span class="secondTitle">&nbsp;${fullname}</span></td>
+					</tr>
+					<tr>
+						<td><span class="secondTitle">&nbsp;本季戰績</span></td>
+					</tr>
+				</table>
+			</div>
+			
+			
+			<div class="cardRight">
+				<table class="teamInfo">
 
 					<thead>
 						<tr>
-
-							<!-- 						<th scope="col">隊伍名稱</th> -->
 							<th scope="col">勝場</th>
 							<th scope="col">敗場</th>
 							<th scope="col">勝率</th>
@@ -87,9 +54,6 @@ left:25px;
 					</thead>
 					<tbody>
 						<tr>
-
-							<%-- 						<td><img src="${team.teamImageSrc}" height="20px" --%>
-							<%-- 							width="20px">${team.teamName}</td> --%>
 							<td>${team.win}</td>
 							<td>${team.lose}</td>
 							<td>${team.percent}</td>
@@ -108,23 +72,18 @@ left:25px;
 		</div>
 
 
-		<div class="newsholder" style="margin-right: 50px">
-			<h2>近期新聞</h2>
-			<hr>
+		<div>
+			<div class="title"><img class="icon" src="${contextRoot}/images/forumImages/basketball-icon.jpg" width="100%">&nbsp;近期新聞</div>
 			<c:forEach var="news" items="${page.content}">
-
-
-				<div class="card mb-3" style="width: 950px; float: top">
+				<div class="card mb-3" id="cardNews">
 					<div class="row g-0">
 						<div class="col-md-4">
-							<img src="${news.picFile}" class="img-fluid rounded-start"
-								alt="...">
+							<img src="${news.picFile}" class="img-fluid rounded-start" id="newsImg" height="100%" alt="...">
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
 								<h5 class="card-title">
-									<a
-										href='${contextRoot}/News/ViewNewsPage?id=${news.newsNumber}'>${news.newsTitle}</a>
+									<a href='${contextRoot}/News/ViewNewsPage?id=${news.newsNumber}'>${news.newsTitle}</a>
 								</h5>
 								<p class="card-text">${news.shortIndex}</p>
 								<p class="card-text">
@@ -138,9 +97,8 @@ left:25px;
 			</c:forEach>
 		</div>
 
-		<div class="container">
-			<h2>球員數據</h2>
-			<hr>
+		<div class="title"><img class="icon" src="${contextRoot}/images/forumImages/basketball-icon.jpg" width="100%">&nbsp;球員數據</div>
+		<div class="cardStat">
 			<table id="table_id" class="display">
 				<thead>
 

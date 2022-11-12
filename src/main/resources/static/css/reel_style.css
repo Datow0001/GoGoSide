@@ -1,18 +1,64 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Roboto+Condensed:wght@700&display=swap");
+#test1109 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+}
+#test1109 #corr {
+  display: inline-flex;
+  /* border: red solid; */
+  margin-bottom: 25px;
+}
+#test1109 .tit {
+  display: flex;
+  justify-content: center;
+}
+#test1109 h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 12px 0;
+  background-color: #F5AF4B;
+  color: rgba(255, 255, 255, 0.8941176471);
+  cursor: pointer;
+  border-radius: 50px;
+  width: 30%;
+  margin: 18px;
+}
+#test1109 .imgg {
+  position: relative;
+  /* bottom: 60px; */
+  height: -webkit-fill-available;
+  float: right;
+}
+#test1109 .highlight {
+  position: absolute;
+  color: #0A324B;
+  width: 20%;
+  height: -webkit-fill-available;
+  background: #F5AF4B;
+}
 #test1109 .reel {
-  border: red solid 2px;
-  width: 90%;
-  margin-left: 6%;
   display: flex;
   justify-content: center;
   align-items: baseline;
+}
+#test1109 .reel .mid {
+  display: flex;
+  width: 93%;
+  align-content: center;
+}
+#test1109 .reel .mid .sco {
+  /* display: flex; */
+  width: 100%;
+}
+#test1109 span {
+  font-size: 20px;
 }
 #test1109 .carousel {
   display: block;
   font-size: 0;
   border-radius: 8px;
-  padding: 8px;
+  padding: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   background: #0A324B;
   transform: translateZ(0);
@@ -52,7 +98,7 @@
 }
 #test1109 .carousel > .wrap {
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 #test1109 .carousel > .wrap::before, #test1109 .carousel > .wrap::after {
   content: "‹";
@@ -90,7 +136,7 @@
   display: inline-block;
   justify-items: center;
   vertical-align: middle;
-  height: 96%;
+  height: 90%;
   margin: 0 0 0 8px;
   position: relative;
   overflow: hidden;
@@ -108,14 +154,13 @@
   transition: 1s ease;
 }
 #test1109 .carousel {
-  border: red solid 2px;
-  position: flex;
+  position: relative;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  width: 55%;
-  max-width: 85%;
+  width: 100%;
+  max-width: 93%;
   min-width: 600px;
   margin: auto;
 }/*# sourceMappingURL=reel_style.css.map */

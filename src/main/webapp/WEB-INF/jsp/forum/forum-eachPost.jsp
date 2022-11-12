@@ -14,7 +14,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+<link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png" type="">
 <!-- <meta http-equiv="content-type" content="application/json; charset='UTF-8'"> -->
 
 
@@ -67,7 +67,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="userAccount" colspan="5">@${ForumPost.userId}</td>
+								<td class="userAccount" colspan="5"><a href="${contextRoot}/viewUserInfo?userId=${ForumPost.userId}">@${ForumPost.userId}</a></td>
 							</tr>
 							<tr>
 								<td class="forumTime" colspan="7">&nbsp;</td>
@@ -143,7 +143,7 @@
 						<div class="card">
 							<table>
 								<tr>
-									<td class="showCmmtInfo">${forumComment.userId}&nbsp;&nbsp;·&nbsp;&nbsp;
+									<td class="showCmmtInfo"><a href="${contextRoot}/viewUserInfo?userId=${forumComment.userId}">${forumComment.userId}</a>&nbsp;&nbsp;·&nbsp;&nbsp;
 										<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${forumComment.cmmtTime}"/>
 									</td>
 <%-- 									<td>${forumComment.userId}<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${forumComment.cmmtTime}"/></td> --%>

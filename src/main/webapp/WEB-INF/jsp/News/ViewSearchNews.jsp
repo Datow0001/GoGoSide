@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="${contextRoot}/images/gogosideLogo.png" type="">
 <meta charset="UTF-8">
-<title>ViewSearchNews</title>
+<title>新聞列表</title>
 <style>
  .container{ 
  display: flex; 
@@ -85,10 +86,7 @@
 
 				</div>
 <!-- 		----------------- -->
-			<form action="${contextRoot}/News/search" method="get">
-			<textarea name="word" class="form-control" ></textarea>
-			<input type="submit" name="submit" value="送出">
-			</form>
+			
 			
 		</div>
 		</div>

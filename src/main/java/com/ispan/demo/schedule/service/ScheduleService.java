@@ -136,11 +136,7 @@ public class ScheduleService {
 			get(i);
 		}
 		for (int i = 20220701; i <= 20220731; i++) {
-			
-			
-				get(i);
-				
-			
+			get(i);
 		}
 		for (int i = 20220801; i <= 20220831; i++) {
 			get(i);

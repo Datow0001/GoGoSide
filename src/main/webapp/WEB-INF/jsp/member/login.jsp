@@ -70,7 +70,7 @@
 											<form:checkbox path="rememberMe" class="ckbutton_checkbox" value="" name=""
 												id="ckbutton_id"/> <label class="ckbutton_label" for="ckbutton_id">
 												<span> 記住我的帳號密碼 </span>
-											</label> <a href=""> <span class="fg">忘記密碼?</span></a>
+											</label> <a href="${contextRoot}/member/forget"> <span class="fg">忘記密碼?</span></a>
 										</div>
 
 

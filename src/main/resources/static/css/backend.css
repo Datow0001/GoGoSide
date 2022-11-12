@@ -1,0 +1,67 @@
+@font-face {
+	src: url(../../fonts/jf-openhuninn-1.1.ttf);
+	font-family: font1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	overflow-x: hidden;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content {
+	width: 90%;
+	overflow: auto;
+	margin-left: 5%;
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cardEach {
+	height: auto;
+	width: 25vw;
+	margin: 2%;
+	padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+	float: left;
+	
+	border: #F5AF4B solid 3px;
+	border-radius: 3%;
+	color: #0A324B;
+	
+	font-family: font1, Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.2vw;
+}
+
+.cardEach a:hover {
+	color: #D73C28;
+	text-decoration: none;
+}
+
+.cardEach a:link, a:visited {
+	color: #0A324B;
+	text-decoration: none;
+}
+
+.title{
+	font-weight: bold;
+	font-size: 1.5vw;
+	color: #D73C28;
+	line-height: 3vw;
+}
+
+.link{
+	font-size: 1vw;
+	line-height: 2em;
+	color: #0A324B;
+	margin-left: 1vw;
+}
+
+#icon{
+	height: 2vw;
+	width: auto;
+	margin-bottom: 0.5vw;
+}

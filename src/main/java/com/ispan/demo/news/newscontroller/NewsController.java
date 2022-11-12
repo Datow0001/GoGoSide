@@ -161,12 +161,15 @@ public class NewsController {
 	@GetMapping("/preNews")
 	public String preNews(Model model) {
 		List<News> lns = nService.findLastThree();
-		News news = lns.get(0);
-		News news2 = lns.get(1);
-		News news3 = lns.get(2);
-		model.addAttribute("news",news);
-		model.addAttribute("news2",news2);
-		model.addAttribute("news3",news3);
+//		News news = lns.get(0);
+//		News news2 = lns.get(1);
+//		News news3 = lns.get(2);
+		model.addAttribute("list",lns);
+		List<News> list = nService.findTopTenClick();
+		model.addAttribute("hotlist",list);
+//		model.addAttribute("news",news);
+//		model.addAttribute("news2",news2);
+//		model.addAttribute("news3",news3);
 		return "/layout/preNews";
 	}
 	

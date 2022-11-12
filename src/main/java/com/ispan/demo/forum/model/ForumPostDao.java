@@ -19,5 +19,9 @@ public interface ForumPostDao extends JpaRepository<ForumPost, Integer> {
 	List<ForumPost> findBySportType(String type);
 	
 	List<ForumPost> findTop3BySportTypeOrderByPostNoDesc(String type);
+	
+	List<ForumPost> findByUserId(String userId);
+	
+	List<ForumPost> findByTeamName(String teamName);
     
 }

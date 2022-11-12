@@ -38,23 +38,7 @@
 			<link href="${contextRoot}/css/responsive.css" rel="stylesheet" />
 			<script src="https://kit.fontawesome.com/104e2ed605.js" crossorigin="anonymous"></script>
 
-			<style>
-				.wrapper {
-					width: 100%;
-				}
 
-				.main-content {
-					min-height: 100%;
-					padding-top: 8px;
-					padding-bottom: 50px;
-				}
-
-				.footer {
-					position: relative;
-					bottom: 0;
-					width: 100%;
-				}
-			</style>
 		</head>
 
 		<body>
@@ -79,13 +63,11 @@
 						<jsp:include page="${contextPath}/highlight"></jsp:include>
 					</div>
 					<!-- news -->
-					
-					
+					<div id="preNBA">
+						<jsp:include page="${contextPath}/preNBAsc"></jsp:include>
+					</div>
 
-
-					
 				</div>
-
 
 
 
@@ -100,8 +82,8 @@
 
 		</body>
 		<!-- jQery -->
-<%-- 		<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script> --%>
-<!-- 		<!-- bootstrap js --> 
-<%-- 		<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script> --%>
+		<script src="${contextRoot}/js/jquery-3.6.1.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="${contextRoot}/js/bootstrap.bundle.min.js"></script>
 
 		</html>
